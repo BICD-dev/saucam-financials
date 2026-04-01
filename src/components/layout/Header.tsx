@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type DropdownItem = {
   label: string;
@@ -158,10 +159,11 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-[100] bg-slate-950 border-b border-white/10">
-      <div className="max-w-[1180px] mx-auto px-8 flex items-center h-[82px] gap-12">
+      <div className="max-w-[1180px] mx-auto px-6 flex items-center h-[82px] gap-12">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 no-underline flex-shrink-0">
-          <LogoMark />
+          {/* <Image src="/assets/saucam_logoMark-WhiteBg-transparent.png" alt="Saucam Logo" className="w-40 h-35" /> */}
+              <LogoMark />
           <span className="font-['Syne'] text-2xl font-bold text-white -tracking-[0.3px]">
             <span className="text-white">Saucam</span>
           </span>
