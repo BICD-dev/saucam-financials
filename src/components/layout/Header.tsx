@@ -163,7 +163,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-[100] bg-slate-950 border-b border-white/10">
-      <div className="max-w-[1180px]  px-8 flex items-center h-[82px] gap-8 justify-between">
+      <div className="max-w-295  px-8 flex items-center h-[82px] gap-8 justify-between">
         {/* Logo */}
         <Link href="/business" className="flex items-center gap-3 no-underline shrink-0">
           {/* <Image src="/assets/saucam_logoMark-WhiteBg-transparent.png" alt="Saucam Logo" className="w-40 h-35" /> */}
@@ -205,12 +205,12 @@ export default function Header() {
               {item.href && !item.dropdown ? (
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-base font-semibold text-white cursor-pointer no-underline whitespace-nowrap transition-colors hover:text-white hover:bg-white/7"
+                  className="flex items-center gap-1.5 px-2 py-2.5 rounded-lg text-base font-semibold text-white cursor-pointer no-underline whitespace-nowrap transition-colors hover:text-white hover:bg-white/7"
                 >
                   {item.label}
                 </Link>
               ) : (
-                <span className="flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-base font-semibold text-white cursor-pointer whitespace-nowrap transition-colors hover:text-white hover:bg-white/7">
+                <span className="flex items-center gap-1.5 px-2 py-2.5 rounded-lg text-base font-semibold text-white cursor-pointer whitespace-nowrap transition-colors hover:text-white hover:bg-white/7">
                   {item.label}
                   {item.dropdown && (
                     <span
@@ -249,7 +249,7 @@ export default function Header() {
         </nav>
 
         {/* CTA buttons */}
-        <div className="hidden md:flex items-center gap-3 shrink-0">
+        <div className="hidden md:flex items-center gap-2 shrink-0">
           <Link
             href="/login"
             className="px-5 py-2.5 rounded-lg text-base font-semibold text-white no-underline transition-colors hover:text-white"

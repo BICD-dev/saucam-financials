@@ -170,7 +170,7 @@ const Business = () => {
     const target = document.getElementById(sectionId);
     if (!target) return;
 
-    const stickyOffset = 160; // header (68) + section nav (68)
+    const stickyOffset = window.innerWidth < 768 ? 132 : 160;
     const targetTop =
       target.getBoundingClientRect().top + window.scrollY - stickyOffset;
 
@@ -252,15 +252,15 @@ const Business = () => {
   return (
     <main className="bg-slate-950 text-white">
       {/* Section 1: Hero */}
-      <div className="min-h-screen px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="min-h-screen px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <section className="flex flex-col gap-6 items-left justify-center ">
           <p className="text-sm font-semibold text-white bg-slate-800 border border-slate-700 rounded-full w-fit px-4 py-1">
             Africa&apos;s fastest growing financial Institution 2023-2025
           </p>
-          <h1 className="font-bold text-7xl leading-tight">
+          <h1 className="font-bold text-5xl md:text-7xl leading-tight">
             International Payment Solutions
           </h1>
-          <h2 className="font-medium text-2xl text-slate-400">
+          <h2 className="font-medium text-xl md:text-2xl text-slate-400">
             Collect payments, access loans and manage operations with a business
             banking solution that meets all your needs.
           </h2>
@@ -268,7 +268,7 @@ const Business = () => {
             Open an account &rarr;
           </button>
         </section>
-        <section className="grid grid-cols-2 gap-4 h-[400px]">
+        <section className="grid grid-cols-2 gap-4 h-[400px] mb-4">
           {/* Placeholder for your visuals */}
           <div className="bg-slate-900 rounded-2xl border border-slate-800"></div>
           <div className="bg-blue-600/20 rounded-2xl border border-blue-500/30"></div>
@@ -277,25 +277,25 @@ const Business = () => {
       </div>
 
       {/* Section 2: Features with Sticky Nav */}
-      <div className="relative h-fit bg-blue-100 pb-20">
-        <div className="py-20 text-center">
-          <h1 className="text-5xl font-bold text-slate-950">
+      <div className="relative h-fit bg-blue-100 pb-20 px-3 sm:px-4 md:px-6">
+        <div className="py-14 md:py-20 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-950">
             All the tools you need to run your
           </h1>
-          <h1 className="text-5xl font-bold text-blue-600">
+          <h1 className="text-3xl md:text-5xl font-bold text-blue-600">
             business with ease.
           </h1>
         </div>
 
         {/* THE STICKY NAVBAR */}
-        <nav className="sticky top-[90px] z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 py-4 mb-10 rounded-lg">
-          <ul className="flex gap-8 justify-center overflow-none px-4">
+        <nav className="sticky top-[82px] md:top-[90px] z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 py-3 mb-8 rounded-lg">
+          <ul className="flex gap-3 md:gap-8 md:justify-center overflow-x-auto whitespace-nowrap px-3 md:px-4">
             {sections.map((sec) => (
               <li key={sec.id}>
                 <a
                   href={`#${sec.id}`}
                   onClick={(event) => handleSectionNavClick(event, sec.id)}
-                  className={`text-sm font-bold uppercase tracking-wider transition-all ${
+                  className={`inline-block text-xs md:text-sm font-bold uppercase tracking-wide md:tracking-wider transition-all ${
                     activeSection === sec.id
                       ? "text-blue-600 border-b-2 pb-1"
                       : "text-slate-500 hover:text-slate-900"
@@ -309,7 +309,7 @@ const Business = () => {
         </nav>
 
         {/* Content Sections */}
-        <section className="max-w-6xl mx-auto px-6">
+        <section className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6">
           {sections.map((sec) => (
             <div
               id={sec.id}
@@ -339,7 +339,7 @@ const Business = () => {
       </div>
 
       {/* ── Section 3: CTA + Testimonial Slider ─────────────── */}
-      <div className="min-h-screen bg-slate-950 grid grid-cols-1 lg:grid-cols-2 gap-16 px-10 py-24 items-center">
+      <div className="min-h-screen bg-slate-950 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 px-4 sm:px-6 lg:px-10 py-16 md:py-24 items-center">
         {/* Left — CTA copy */}
         <div className="flex flex-col gap-6">
           <span className="text-blue-400 text-sm font-semibold uppercase tracking-widest">
@@ -538,7 +538,7 @@ const Business = () => {
         </div>
       </div>
       {/* section 4 */}
-      <div className="bg-slate-200 h-screen flex flex-col gap-14 pt-8 text-black">
+      <div className="bg-slate-200 min-h-screen px-4 sm:px-6 lg:px-10 flex flex-col gap-10 md:gap-14 pt-8 text-black">
         <section className="grid grid-cols-1 lg:grid-cols-3">
           <h1 className="text-2xl font-bold">What&apos;s more?</h1>
           <h1 className="text-2xl font-semibold text-gray-600">
@@ -593,27 +593,27 @@ const Business = () => {
             aria-hidden
           />
  
-          <div className="relative z-10 max-w-5xl mx-auto w-full px-8">
+          <div className="relative z-10 max-w-5xl mx-auto w-full px-4 sm:px-6 md:px-8">
             {/* Heading */}
-            <div className="mb-12">
+            <div className="mb-8 md:mb-12">
               <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">
                 Getting started
               </p>
-              <h2 className="text-5xl font-bold text-slate-900">How to get started</h2>
-              <p className="text-slate-600 mt-3 text-lg">
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900">How to get started</h2>
+              <p className="text-slate-600 mt-3 text-base md:text-lg">
                 Your journey with Saucam starts here — just follow these easy
                 steps.
               </p>
             </div>
  
             {/* Progress bar */}
-            <div className="mb-10">
+            <div className="mb-8 md:mb-10">
               <div className="flex items-center justify-between relative">
                 {/* Track */}
-                <div className="absolute top-5 left-5 right-5 h-px bg-slate-300 z-0" />
+                <div className="absolute top-4 md:top-5 left-4 md:left-5 right-4 md:right-5 h-px bg-slate-300 z-0" />
                 {/* Fill */}
                 <div
-                  className="absolute top-5 left-5 h-px bg-blue-500 z-10"
+                  className="absolute top-4 md:top-5 left-4 md:left-5 h-px bg-blue-500 z-10"
                   style={{ width: `calc(${progressPercent}% - 0px)` }}
                 />
  
@@ -624,7 +624,7 @@ const Business = () => {
                   >
                     {/* Circle */}
                     <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-500"
+                      className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-xs md:text-sm font-bold border-2 transition-all duration-500"
                       style={{
                         background:
                           i < activeStep
@@ -670,7 +670,7 @@ const Business = () => {
  
                     {/* Step label */}
                     <span
-                      className="text-xs font-semibold transition-colors duration-300 text-center max-w-[80px]"
+                      className="hidden sm:block text-xs font-semibold transition-colors duration-300 text-center max-w-[80px]"
                       style={{
                         color:
                           i === activeStep
@@ -688,11 +688,11 @@ const Business = () => {
             </div>
  
             {/* Card */}
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-6">
               {/* Main card */}
               <div
                 key={activeStep}
-                className="lg:col-span-3 bg-white border border-slate-300 rounded-2xl p-10"
+                className="lg:col-span-3 bg-white border border-slate-300 rounded-2xl p-5 md:p-10"
                 style={{ animation: "stepCardIn 0.45s cubic-bezier(0.22,1,0.36,1) both" }}
               >
                 {/* Step icon + number */}
@@ -704,13 +704,13 @@ const Business = () => {
                     <div className="text-blue-400 text-xs font-bold uppercase tracking-widest">
                       Step {steps[activeStep].number}
                     </div>
-                    <div className="text-slate-900 font-bold text-xl mt-0.5">
+                    <div className="text-slate-900 font-bold text-lg md:text-xl mt-0.5">
                       {steps[activeStep].title}
                     </div>
                   </div>
                 </div>
  
-                <p className="text-slate-600 text-lg leading-relaxed mb-8">
+                <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8">
                   {steps[activeStep].description}
                 </p>
  
@@ -724,7 +724,7 @@ const Business = () => {
               </div>
  
               {/* Side list of upcoming steps */}
-              <div className="lg:col-span-2 flex flex-col gap-3">
+              <div className="hidden lg:flex lg:col-span-2 flex-col gap-3">
                 {steps.map((step, i) => (
                   <div
                     key={step.number}
@@ -786,7 +786,7 @@ const Business = () => {
  
             {/* Scroll hint */}
             {activeStep < steps.length - 1 && (
-              <div className="flex items-center gap-2 mt-8 text-slate-500 text-sm">
+              <div className="hidden sm:flex items-center gap-2 mt-8 text-slate-500 text-sm">
                 <svg
                   width="16"
                   height="16"
