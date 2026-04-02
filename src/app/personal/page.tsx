@@ -57,7 +57,7 @@ export default function PersonalPage() {
           position: "relative",
           overflow: "hidden",
         }}
-        className="px-4 sm:px-6 py-20 sm:py-28 text-white text-center"
+        className="px-3 sm:px-6 py-20 sm:py-28 text-white text-center"
       >
         {/* Decorative circles */}
         <div
@@ -186,7 +186,7 @@ export default function PersonalPage() {
       </section>
 
       {/* ── Services Grid ────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#fff" }}>
+      <section className="py-16 sm:py-24 px-3 sm:px-6" style={{ background: "#fff" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10 sm:mb-14">
             <p
@@ -340,7 +340,7 @@ export default function PersonalPage() {
       {/* ── Enquiry Form ─────────────────────────────────────── */}
       <section
         id="inquiry"
-        className="py-16 sm:py-24 px-4 sm:px-6"
+        className="py-16 sm:py-24 px-3 sm:px-6"
         style={{ background: "#E2E8F0" }}
       >
         <div className="max-w-5xl mx-auto">
@@ -647,7 +647,7 @@ export default function PersonalPage() {
       {/* ── Our Guarantee ────────────────────────────────────── */}
       <section
         id="guarantee"
-        className="py-16 sm:py-24 px-4 sm:px-6"
+        className="py-16 sm:py-24 px-3 sm:px-6"
         style={{ background: "#fff" }}
       >
         <div className="max-w-6xl mx-auto">
@@ -716,7 +716,7 @@ export default function PersonalPage() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#E2E8F0" }}>
+      <section className="py-16 sm:py-24 px-3 sm:px-6" style={{ background: "#E2E8F0" }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10 sm:mb-12">
             <p

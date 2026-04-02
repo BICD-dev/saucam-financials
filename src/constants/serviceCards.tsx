@@ -3,7 +3,7 @@ export const serviceCards = [
   {
     name: "Corporate Remittance",
     description:
-      "Empower your business with global reach. Our remittance infrastructure allows for high-volume cross-border transfers with real-time tracking and automated compliance. Designed for scale, we help you settle vendor invoices and payroll across 50+ countries instantly.",
+      "Fast cross-border transfers with tracking and compliance built in.",
     tag: "Business",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -16,7 +16,7 @@ export const serviceCards = [
   {
     name: "Asset-Backed Microfinance",
     description:
-      "Unlock liquidity without liquidating your assets. We provide specialized credit facilities secured against your business assets. Our microfinance model focuses on sustainable growth, offering flexible repayment terms that align with your cash flow cycles.",
+      "Asset-backed funding with flexible terms for growing businesses.",
     tag: "Finance",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -30,7 +30,7 @@ export const serviceCards = [
   {
     name: "Saucam Exchange App",
     description:
-      "The future of currency management in your pocket. Swap between major world currencies at mid-market rates. The Saucam app provides multi-currency wallets, instant P2P transfers, and detailed spending analytics for the modern entrepreneur.",
+      "Multi-currency wallets, transfers, and FX tools in one app.",
     tag: "Mobile",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -44,7 +44,7 @@ export const serviceCards = [
   {
     name: "Foreign Exchange",
     description:
-      "Access deep liquidity pools and competitive FX rates. Our platform mitigates currency risk through forward contracts and spot trades, ensuring your profit margins remain protected despite market volatility.",
+      "Competitive FX rates with tools to reduce currency risk.",
     tag: "FX",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -57,7 +57,7 @@ export const serviceCards = [
   {
     name: "Currency Brokerage",
     description:
-      "Personalized brokerage services for high-net-worth transactions. Our expert brokers provide market insights and execution strategies to ensure you get the best possible value on large-scale currency acquisitions.",
+      "Expert brokerage support for large currency transactions.",
     tag: "Brokerage",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -69,7 +69,7 @@ export const serviceCards = [
   {
     name: "Cross-Border Payments",
     description:
-      "With the Saucam Exchange App, web platform and physical branch network, customers can initiate transfers, track transactions in real-time and access support where needed — bridging digital convenience and human assistance.",
+      "Secure cross-border payments with real-time tracking.",
     tag: "Payments",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -82,7 +82,7 @@ export const serviceCards = [
   {
     name: "Credit Card Payments",
     description:
-      "Saucam offers secure and reliable credit card payment solutions for global transactions. All payments are processed using bank-grade encryption, giving your customers and your business total peace of mind.",
+      "Secure card payments for global transactions.",
     tag: "Cards",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -96,7 +96,7 @@ export const serviceCards = [
   {
     name: "TravelCard Investment & Savings",
     description:
-      "The service combines Target Savings Plans and Fixed Yield Investment Plans, allowing users to save with purpose while earning stable and predictable returns — perfect for frequent travellers and global entrepreneurs.",
+      "Savings and investment plans with steady returns.",
     tag: "Savings",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

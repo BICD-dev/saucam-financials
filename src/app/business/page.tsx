@@ -253,7 +253,7 @@ const Business = () => {
   return (
     <main className="bg-slate-950 text-white">
       {/* Section 1: Hero */}
-      <div className="min-h-screen px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div className="min-h-screen px-3 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <section className="flex flex-col gap-6 items-left justify-center ">
           <p className="text-sm font-semibold text-white bg-slate-800 border border-slate-700 rounded-full w-fit px-4 py-1">
             Africa&apos;s fastest growing financial Institution 2023-2025
@@ -278,7 +278,7 @@ const Business = () => {
       </div>
 
       {/* Section 2: Features with Sticky Nav */}
-      <div className="relative h-fit bg-blue-100 pb-20 px-3 sm:px-4 md:px-6">
+      <div className="relative h-fit bg-blue-100 pb-20 px-2 sm:px-4 md:px-6">
         <div className="py-14 md:py-20 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-slate-950">
             All the tools you need to run your
@@ -290,7 +290,7 @@ const Business = () => {
 
         {/* THE STICKY NAVBAR */}
         <nav className="sticky top-20.5 md:top-22.5 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 py-3 mb-8 rounded-lg">
-          <ul className="flex gap-3 md:gap-8 md:justify-center overflow-x-auto whitespace-nowrap px-3 md:px-4">
+          <ul className="flex gap-3 md:gap-8 md:justify-center overflow-x-auto whitespace-nowrap px-2 md:px-4">
             {sections.map((sec) => (
               <li key={sec.id}>
                 <a
@@ -310,7 +310,7 @@ const Business = () => {
         </nav>
 
         {/* Content Sections */}
-        <section className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6">
+        <section className="max-w-6xl mx-auto px-2 sm:px-4 md:px-6">
           {sections.map((sec) => (
             <div
               id={sec.id}
@@ -340,7 +340,7 @@ const Business = () => {
       </div>
 
       {/* ── Section 3: CTA + Testimonial Slider ─────────────── */}
-      <div className="min-h-screen bg-slate-950 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 px-4 sm:px-6 lg:px-10 py-16 md:py-24 items-center">
+      <div className="min-h-screen bg-slate-950 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 px-3 sm:px-6 lg:px-10 py-16 md:py-24 items-center">
         {/* Left — CTA copy */}
         <div className="flex flex-col gap-6">
           <span className="text-blue-400 text-sm font-semibold uppercase tracking-widest">
@@ -539,7 +539,7 @@ const Business = () => {
         </div>
       </div>
       {/* section 4 */}
-      <div className="bg-slate-200 min-h-screen px-4 sm:px-6 lg:px-10 flex flex-col gap-10 md:gap-14 pt-8 text-black">
+      <div className="bg-slate-200 min-h-screen px-3 sm:px-6 lg:px-10 flex flex-col gap-10 md:gap-14 pt-8 text-black">
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-0">
           <h1 className="text-lg md:text-2xl font-bold">What&apos;s more?</h1>
           <h1 className="text-lg md:text-2xl font-semibold text-gray-600">
@@ -602,7 +602,7 @@ const Business = () => {
             aria-hidden
           />
  
-          <div className="relative z-10 max-w-5xl mx-auto w-full px-4 sm:px-6 md:px-8">
+          <div className="relative z-10 max-w-5xl mx-auto w-full px-3 sm:px-6 md:px-8">
             {/* Heading */}
             <div className="mb-8 md:mb-12">
               <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">

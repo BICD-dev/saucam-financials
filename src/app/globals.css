@@ -128,9 +128,7 @@
     @apply font-sans antialiased;
     scroll-behavior: smooth;
   }
-  div{
-    @apply px-4
-  }
+ 
 }
 .poppins-thin {
   font-family: "Poppins", sans-serif;
@@ -238,4 +236,10 @@
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: italic;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 93%;
+  }
 }
