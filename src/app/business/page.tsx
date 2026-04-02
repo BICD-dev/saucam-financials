@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { ArrowLeftRight, PiggyBank, CreditCard } from "lucide-react";
 
 const sections = [
   {
@@ -268,7 +269,7 @@ const Business = () => {
             Open an account &rarr;
           </button>
         </section>
-        <section className="grid grid-cols-2 gap-4 h-[400px] mb-4">
+        <section className="grid grid-cols-2 gap-4 h-96 md:h-100 mb-4">
           {/* Placeholder for your visuals */}
           <div className="bg-slate-900 rounded-2xl border border-slate-800"></div>
           <div className="bg-blue-600/20 rounded-2xl border border-blue-500/30"></div>
@@ -288,7 +289,7 @@ const Business = () => {
         </div>
 
         {/* THE STICKY NAVBAR */}
-        <nav className="sticky top-[82px] md:top-[90px] z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 py-3 mb-8 rounded-lg">
+        <nav className="sticky top-20.5 md:top-22.5 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 py-3 mb-8 rounded-lg">
           <ul className="flex gap-3 md:gap-8 md:justify-center overflow-x-auto whitespace-nowrap px-3 md:px-4">
             {sections.map((sec) => (
               <li key={sec.id}>
@@ -316,16 +317,16 @@ const Business = () => {
               key={sec.id}
               className="min-h-[70vh] flex flex-col justify-center border-b border-slate-200 last:border-0"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div>
                   {/* <h3 className="text-blue-600 font-bold mb-4">Features // 0{sections.indexOf(sec) + 1}</h3> */}
-                  <h2 className="text-4xl font-bold text-slate-900 mb-6">
+                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6">
                     {sec.title}
                   </h2>
-                  <p className="text-xl text-slate-600 leading-relaxed">
+                  <p className="text-base md:text-xl text-slate-600 leading-relaxed">
                     {sec.content}
                   </p>
-                  <button className="mt-8 text-blue-600 font-bold hover:underline underline-offset-4">
+                  <button className="mt-6 md:mt-8 text-sm md:text-base text-blue-600 font-bold hover:underline underline-offset-4">
                     Learn more about {sec.title} &rarr;
                   </button>
                 </div>
@@ -345,14 +346,14 @@ const Business = () => {
           <span className="text-blue-400 text-sm font-semibold uppercase tracking-widest">
             Trusted by thousands
           </span>
-          <h1 className="text-5xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
             Don&apos;t wait.
             <br />
             <span className="text-blue-500">Start your journey</span>
             <br />
             today.
           </h1>
-          <p className="text-slate-400 text-lg leading-relaxed max-w-md">
+          <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-md">
             Join over 12,000 businesses across Africa and the globe who rely on
             Saucam every day to move money, grow faster, and do more.
           </p>
@@ -366,7 +367,7 @@ const Business = () => {
           </div>
  
           {/* Stats row */}
-          <div className="grid grid-cols-3 gap-6 mt-4 pt-8 border-t border-slate-800">
+          <div className="grid grid-cols-3 gap-4 md:gap-6 mt-4 pt-8 border-t border-slate-800">
             {[
               { value: "12K+", label: "Businesses" },
               { value: "50+", label: "Countries" },
@@ -411,7 +412,7 @@ const Business = () => {
  
               <div className="flex items-center gap-4">
                 <div
-                  className={`w-12 h-12 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}
+                  className={`w-12 h-12 rounded-full bg-linear-to-br ${t.color} flex items-center justify-center text-white font-bold text-sm shrink-0`}
                 >
                   {t.initials}
                 </div>
@@ -522,7 +523,7 @@ const Business = () => {
                   }
                 >
                   <div
-                    className={`w-8 h-8 rounded-full bg-gradient-to-br ${tm.color} flex items-center justify-center text-white font-bold text-xs flex-shrink-0`}
+                    className={`w-8 h-8 rounded-full bg-linear-to-br ${tm.color} flex items-center justify-center text-white font-bold text-xs shrink-0`}
                   >
                     {tm.initials}
                   </div>
@@ -539,42 +540,50 @@ const Business = () => {
       </div>
       {/* section 4 */}
       <div className="bg-slate-200 min-h-screen px-4 sm:px-6 lg:px-10 flex flex-col gap-10 md:gap-14 pt-8 text-black">
-        <section className="grid grid-cols-1 lg:grid-cols-3">
-          <h1 className="text-2xl font-bold">What&apos;s more?</h1>
-          <h1 className="text-2xl font-semibold text-gray-600">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-0">
+          <h1 className="text-lg md:text-2xl font-bold">What&apos;s more?</h1>
+          <h1 className="text-lg md:text-2xl font-semibold text-gray-600">
             Explore more ways to take your business to the next level.
           </h1>
-          <span></span>
+          <span />
         </section>
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <span className="rounded-md border border-blue-200 bg-white text-black flex flex-col gap-4 p-6">
-            <h1 className="text-xl font-bold"> Cross Border Payments </h1>
-            <p className="text-slate-600">
+          <div className="rounded-md border border-blue-200 bg-white text-black flex flex-col gap-4 p-5 md:p-6">
+            <div className="w-11 h-11 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+              <ArrowLeftRight size={22} />
+            </div>
+            <h1 className="text-lg md:text-xl font-bold">Cross Border Payments</h1>
+            <p className="text-sm md:text-base text-slate-600">
               With the Saucam Exchange App, web platform and physical branch
               network, customers can instantiate transfers, track transactions
               in real-time and access support where needed, bringing the gap
               between digital convenience and human assistance.
             </p>
-          </span>
-          <span className="rounded-md border border-blue-200 bg-white text-black flex flex-col gap-4 p-6">
-            <h1 className="text-xl font-bold"> Investment & Saving Schemes </h1>
-            <p className="text-slate-600">
+          </div>
+          <div className="rounded-md border border-blue-200 bg-white text-black flex flex-col gap-4 p-5 md:p-6">
+            <div className="w-11 h-11 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+              <PiggyBank size={22} />
+            </div>
+            <h1 className="text-lg md:text-xl font-bold">Investment & Saving Schemes</h1>
+            <p className="text-sm md:text-base text-slate-600">
               The service combines Target Savings Plans and Fixed Yield
               Investment Plans, allowing users to save with purpose while
               earning stable and predictable returns.
             </p>
-          </span>
-          <span className="rounded-md border border-blue-200 bg-white text-black flex flex-col gap-4 p-6">
-            <h1 className="text-xl font-bold"> Cross Border Payments </h1>
-            <p className="text-slate-600">
+          </div>
+          <div className="rounded-md border border-blue-200 bg-white text-black flex flex-col gap-4 p-5 md:p-6">
+            <div className="w-11 h-11 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+              <CreditCard size={22} />
+            </div>
+            <h1 className="text-lg md:text-xl font-bold">Card Payments</h1>
+            <p className="text-sm md:text-base text-slate-600">
               With the Saucam Exchange App, web platform and physical branch
               network, customers can instantiate transfers, track transactions
               in real-time and access support where needed, bringing the gap
               between digital convenience and human assistance.
             </p>
-          </span>
+          </div>
         </section>
-        </div>
         {/* section 5 */}
         <div
         ref={stepsRef}
@@ -670,7 +679,7 @@ const Business = () => {
  
                     {/* Step label */}
                     <span
-                      className="hidden sm:block text-xs font-semibold transition-colors duration-300 text-center max-w-[80px]"
+                      className="hidden sm:block text-xs font-semibold transition-colors duration-300 text-center max-w-20"
                       style={{
                         color:
                           i === activeStep
@@ -742,7 +751,7 @@ const Business = () => {
                     }}
                   >
                     <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 transition-all duration-300"
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0 transition-all duration-300"
                       style={{
                         background:
                           i < activeStep
@@ -807,6 +816,7 @@ const Business = () => {
             )}
           </div>
         </div>
+      </div>
       </div>
        {/* ── Keyframe animations ──────────────────────────────── */}
       <style>{`

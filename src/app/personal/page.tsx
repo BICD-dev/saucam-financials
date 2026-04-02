@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import {faqGroups} from "@/constants/faq";
 import { serviceCards } from "@/constants/serviceCards";
 import { guarantees } from "@/constants/guarantee";
@@ -56,7 +57,7 @@ export default function PersonalPage() {
           position: "relative",
           overflow: "hidden",
         }}
-        className="px-6 py-28 text-white text-center"
+        className="px-4 sm:px-6 py-20 sm:py-28 text-white text-center"
       >
         {/* Decorative circles */}
         <div
@@ -106,7 +107,7 @@ export default function PersonalPage() {
 
           <h1
             className="font-bold mb-5"
-            style={{ fontSize: "clamp(2.2rem, 5vw, 3.6rem)", lineHeight: 1.15 }}
+            style={{ fontSize: "clamp(2rem, 5vw, 3.6rem)", lineHeight: 1.15 }}
           >
             Financial Solutions
             <br />
@@ -114,24 +115,24 @@ export default function PersonalPage() {
           </h1>
 
           <p
-            className="text-blue-100 mb-10 mx-auto"
-            style={{ fontSize: 18, lineHeight: 1.75, maxWidth: 560 }}
+            className="text-blue-100 mb-8 sm:mb-10 mx-auto text-sm sm:text-[18px] leading-7 sm:leading-[1.75]"
+            style={{ maxWidth: 560 }}
           >
             Whether you&apos;re sending money abroad, growing your savings, or
             accessing foreign exchange — Saucam puts world-class financial tools
             in your hands.
           </p>
 
-          <div className="flex gap-4 justify-center flex-wrap">
+          <div className="flex gap-3 sm:gap-4 justify-center flex-wrap">
             <a
               href="#inquiry"
               style={{
                 background: "#fff",
                 color: "#0D47A1",
-                padding: "13px 32px",
+                padding: "12px 24px",
                 borderRadius: 10,
                 fontWeight: 700,
-                fontSize: 15,
+                fontSize: 14,
                 textDecoration: "none",
                 display: "inline-block",
               }}
@@ -143,10 +144,10 @@ export default function PersonalPage() {
               style={{
                 background: "rgba(255,255,255,0.12)",
                 color: "#fff",
-                padding: "13px 32px",
+                padding: "12px 24px",
                 borderRadius: 10,
                 fontWeight: 600,
-                fontSize: 15,
+                fontSize: 14,
                 textDecoration: "none",
                 border: "1px solid rgba(255,255,255,0.25)",
                 display: "inline-block",
@@ -185,9 +186,9 @@ export default function PersonalPage() {
       </section>
 
       {/* ── Services Grid ────────────────────────────────────── */}
-      <section className="py-24 px-6" style={{ background: "#fff" }}>
+      <section className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#fff" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
             <p
               className="text-sm font-bold uppercase tracking-widest mb-3"
               style={{ color: "#2563EB" }}
@@ -195,12 +196,12 @@ export default function PersonalPage() {
               What we offer
             </p>
             <h2
-              className="text-4xl font-bold mb-3"
+              className="text-3xl sm:text-4xl font-bold mb-3"
               style={{ color: "#0A2D6E" }}
             >
               Our Services
             </h2>
-            <p className="text-slate-500 text-lg max-w-xl mx-auto">
+            <p className="text-slate-500 text-base sm:text-lg max-w-xl mx-auto">
               A full suite of financial tools built for individuals and businesses
               operating across borders.
             </p>
@@ -220,7 +221,7 @@ export default function PersonalPage() {
                   background: "#fff",
                   border: "1.5px solid #E2E8F0",
                   borderRadius: 16,
-                  padding: "28px 24px",
+                  padding: "24px 20px",
                   display: "flex",
                   flexDirection: "column",
                   gap: 16,
@@ -253,8 +254,8 @@ export default function PersonalPage() {
                 >
                   <div
                     style={{
-                      width: 48,
-                      height: 48,
+                      width: 44,
+                      height: 44,
                       borderRadius: 12,
                       background: svc.accent,
                       display: "flex",
@@ -285,7 +286,7 @@ export default function PersonalPage() {
                 <div>
                   <h3
                     style={{
-                      fontSize: 17,
+                      fontSize: 16,
                       fontWeight: 700,
                       color: "#0A2D6E",
                       marginBottom: 8,
@@ -295,7 +296,7 @@ export default function PersonalPage() {
                   </h3>
                   <p
                     style={{
-                      fontSize: 14,
+                      fontSize: 13,
                       color: "#64748B",
                       lineHeight: 1.7,
                     }}
@@ -339,7 +340,7 @@ export default function PersonalPage() {
       {/* ── Enquiry Form ─────────────────────────────────────── */}
       <section
         id="inquiry"
-        className="py-24 px-6"
+        className="py-16 sm:py-24 px-4 sm:px-6"
         style={{ background: "#E2E8F0" }}
       >
         <div className="max-w-5xl mx-auto">
@@ -352,21 +353,21 @@ export default function PersonalPage() {
               Get in touch
             </p>
             <h2
-              className="text-4xl font-bold mb-3"
+              className="text-3xl sm:text-4xl font-bold mb-3"
               style={{ color: "#0A2D6E" }}
             >
               Inquire About Our Services
             </h2>
-            <p className="text-slate-600 text-lg max-w-xl">
+            <p className="text-slate-600 text-base sm:text-lg max-w-xl">
               Tell us what you need and a dedicated relationship manager will
               reach out within one business day.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 items-start">
             {/* Form card */}
             <div
-              className="lg:col-span-3 rounded-2xl p-8 lg:p-10"
+              className="lg:col-span-3 rounded-2xl p-6 sm:p-8 lg:p-10"
               style={{
                 background: "#fff",
                 boxShadow: "0 4px 32px rgba(10,45,110,0.08)",
@@ -377,8 +378,8 @@ export default function PersonalPage() {
                 <div className="flex flex-col items-center justify-center py-12 gap-5 text-center">
                   <div
                     style={{
-                      width: 64,
-                      height: 64,
+                      width: 56,
+                      height: 56,
                       borderRadius: "50%",
                       background: "#EBF5FF",
                       display: "flex",
@@ -556,22 +557,22 @@ export default function PersonalPage() {
             </div>
 
             {/* Side info */}
-            <div className="lg:col-span-2 flex flex-col gap-4">
+                <div className="lg:col-span-2 flex flex-col gap-4">
               {[
                 {
-                  icon: "📞",
+                  icon: <Phone size={20} strokeWidth={2} />,
                   label: "Call Us",
                   value: "+971 4 000 0000",
                   sub: "Mon – Fri, 8am – 6pm GST",
                 },
                 {
-                  icon: "✉️",
+                  icon: <Mail size={20} strokeWidth={2} />,
                   label: "Email Us",
                   value: "support@saucam.com",
                   sub: "We reply within 24 hours",
                 },
                 {
-                  icon: "📍",
+                  icon: <MapPin size={20} strokeWidth={2} />,
                   label: "Head Office",
                   value: "Dubai, UAE",
                   sub: "Business Bay, Floor 12",
@@ -586,7 +587,9 @@ export default function PersonalPage() {
                     boxShadow: "0 2px 12px rgba(10,45,110,0.05)",
                   }}
                 >
-                  <span style={{ fontSize: 22 }}>{item.icon}</span>
+                    <span className="text-[#1565C0]" aria-hidden>
+                      {item.icon}
+                    </span>
                   <div>
                     <p
                       className="text-xs font-bold uppercase tracking-widest mb-1"
@@ -644,11 +647,11 @@ export default function PersonalPage() {
       {/* ── Our Guarantee ────────────────────────────────────── */}
       <section
         id="guarantee"
-        className="py-24 px-6"
+        className="py-16 sm:py-24 px-4 sm:px-6"
         style={{ background: "#fff" }}
       >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 sm:mb-14">
             <p
               className="text-sm font-bold uppercase tracking-widest mb-3"
               style={{ color: "#1565C0" }}
@@ -656,22 +659,22 @@ export default function PersonalPage() {
               Why choose us
             </p>
             <h2
-              className="text-4xl font-bold"
+              className="text-3xl sm:text-4xl font-bold"
               style={{ color: "#0A2D6E" }}
             >
               Our Guarantee
             </h2>
-            <p className="text-slate-500 mt-3 text-lg max-w-xl mx-auto">
+            <p className="text-slate-500 mt-3 text-base sm:text-lg max-w-xl mx-auto">
               Every commitment we make is backed by rigorous standards, expert
               people, and proven technology.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
             {guarantees.map((g, i) => (
               <div
                 key={g.title}
-                className="rounded-2xl p-8 flex flex-col gap-5"
+                className="rounded-2xl p-6 sm:p-8 flex flex-col gap-5"
                 style={{
                   background: i % 2 === 0 ? "#F0F5FF" : "#fff",
                   border: "1px solid rgba(10,45,110,0.09)",
@@ -713,9 +716,9 @@ export default function PersonalPage() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────── */}
-      <section className="py-24 px-6" style={{ background: "#E2E8F0" }}>
+      <section className="py-16 sm:py-24 px-4 sm:px-6" style={{ background: "#E2E8F0" }}>
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10 sm:mb-12">
             <p
               className="text-sm font-bold uppercase tracking-widest mb-3"
               style={{ color: "#1565C0" }}
@@ -723,12 +726,12 @@ export default function PersonalPage() {
               Got questions?
             </p>
             <h2
-              className="text-4xl font-bold"
+              className="text-3xl sm:text-4xl font-bold"
               style={{ color: "#0A2D6E" }}
             >
               Frequently Asked Questions
             </h2>
-            <p className="text-slate-500 mt-3 text-lg">
+            <p className="text-slate-500 mt-3 text-base sm:text-lg">
               Everything you need to know about our services.
             </p>
           </div>
