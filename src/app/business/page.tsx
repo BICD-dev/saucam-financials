@@ -539,14 +539,14 @@ const Business = () => {
       </div>
       {/* section 4 */}
       <div className="bg-slate-200 h-screen flex flex-col gap-14 pt-8 text-black">
-        <section className="grid grid-cols-3">
+        <section className="grid grid-cols-1 lg:grid-cols-3">
           <h1 className="text-2xl font-bold">What&apos;s more?</h1>
           <h1 className="text-2xl font-semibold text-gray-600">
             Explore more ways to take your business to the next level.
           </h1>
           <span></span>
         </section>
-        <section className="grid grid-cols-3 gap-4">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <span className="rounded-md border border-blue-200 bg-white text-black flex flex-col gap-4 p-6">
             <h1 className="text-xl font-bold"> Cross Border Payments </h1>
             <p className="text-slate-600">

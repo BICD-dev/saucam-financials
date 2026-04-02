@@ -168,8 +168,8 @@ export default function Header() {
         <Link href="/business" className="flex items-center gap-3 no-underline shrink-0">
           {/* <Image src="/assets/saucam_logoMark-WhiteBg-transparent.png" alt="Saucam Logo" className="w-40 h-35" /> */}
               <LogoMark />
-          <span className="font-['Syne'] text-2xl font-bold text-white -tracking-[0.3px]">
-            <span className="text-white">Saucam</span>
+          <span className="font-['Syne'] text-2xl font-bold text-white -tracking-[0.3px]  lg:block">
+            <span className="text-white hidden md:block">Saucam</span>
           </span>
         </Link>
 
