@@ -43,16 +43,16 @@ const navItems: NavItem[] = [
           </svg>
         ),
       },
-      {
-        label: "Awards",
-        description: "Recognition & milestones",
-        href: "/about/awards",
-        icon: (
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M8 2L10 6h4l-3.3 2.4 1.3 4L8 10.2 4 12.4 5.3 8.4 2 6h4z" stroke="white" strokeWidth="1.3" />
-          </svg>
-        ),
-      },
+      // {
+      //   label: "Awards",
+      //   description: "Recognition & milestones",
+      //   href: "/about/awards",
+      //   icon: (
+      //     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      //       <path d="M8 2L10 6h4l-3.3 2.4 1.3 4L8 10.2 4 12.4 5.3 8.4 2 6h4z" stroke="white" strokeWidth="1.3" />
+      //     </svg>
+      //   ),
+      // },
     ],
   },
   {
