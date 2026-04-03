@@ -1,74 +1,9 @@
-import React from "react";
-
-/* ─── Timeline milestones ────────────────────────────────── */
-const milestones = [
-  {
-    year: "2023",
-    title: "The Founding Vision",
-    body: "Saucam Financials was born in Dubai out of a simple but powerful observation: businesses and individuals moving money across borders were being let down by slow, opaque, and expensive systems. Our founders set out to change that.",
-  },
-  {
-    year: "2024",
-    title: "First Regulatory Licence",
-    body: "After two years of laying the groundwork, Saucam received its first licence from the Central Bank of the UAE — a milestone that signalled our commitment to operating at the highest standards of compliance and trust.",
-  },
-  {
-    year: "2025",
-    title: "Expanding Across Africa",
-    body: "Recognising the enormous demand for reliable cross-border payments on the African continent, we launched dedicated corridors into Nigeria, Ghana, Kenya and South Africa, serving thousands of businesses for the first time.",
-  },
-  {
-    year: "2026",
-    title: "The Saucam Exchange App",
-    body: "We put the power of multi-currency wallets and instant P2P transfers into every pocket. The Saucam Exchange App launched to overwhelming demand, onboarding over 50,000 users in its first six months.",
-  },
-  {
-    year: "2026",
-    title: "Asset-Backed Microfinance",
-    body: "We introduced our asset-backed microfinance product — a first for our market — enabling SMEs to unlock working capital against existing assets without liquidating them. Over $20M in facilities were deployed in the first year.",
-  },
-];
-
-const stats = [
-  { value: "2+", label: "Countries served" },
-  { value: "10+", label: "Business clients" },
-  { value: "$1M+", label: "Total processed" },
-];
-
-const team = [
-  {
-    initials: "AK",
-    name: "Amara Kone",
-    role: "Co-Founder & CEO",
-    bio: "Former investment banker with 15 years of experience across JPMorgan and Standard Chartered. Amara's vision for accessible cross-border finance is the heartbeat of Saucam.",
-    color: "#DBEAFE",
-    textColor: "#1D4ED8",
-  },
-  {
-    initials: "RS",
-    name: "Daniel Joseph",
-    role: "Co-Founder & CTO",
-    bio: "A fintech engineer who previously built payment infrastructure at Datafy Technologies and Strategic Outsourcing Limited. Daniel architected Saucam's core compliance and real-time settlement engine from the ground up.",
-    color: "#D1FAE5",
-    textColor: "#065F46",
-  },
-  {
-    initials: "NN",
-    name: "Bright Iheagwam",
-    role: "Chief Operating Officer",
-    bio: "A veteran of African financial markets, Bright led expansion operations at a pan-African bank for a decade before joining Saucam to build our corridor network.",
-    color: "#EDE9FE",
-    textColor: "#5B21B6",
-  },
-  {
-    initials: "FH",
-    name: "Folarin Ibrahim",
-    role: "Chief Compliance Officer",
-    bio: "With a background in regulatory affairs across the GCC and EU, Folarin ensures Saucam maintains the highest standards of AML, KYC and international compliance at scale.",
-    color: "#FEF9C3",
-    textColor: "#92400E",
-  },
-];
+import {
+  ourStoryFeatureCards,
+  ourStoryMilestones,
+  ourStoryStats,
+  ourStoryTeam,
+} from "@/constants/ourStory";
 
 /* ─── Page ─────────────────────────────────────────────────── */
 export default function OurStoryPage() {
@@ -123,7 +58,7 @@ export default function OurStoryPage() {
 
           {/* Stat row */}
           <div style={{ display: "flex", gap: 40, flexWrap: "wrap" }}>
-            {stats.map((s) => (
+            {ourStoryStats.map((s) => (
               <div key={s.label}>
                 <div style={{ fontSize: 30, fontWeight: 800, color: "#1D4ED8" }}>{s.value}</div>
                 <div style={{ fontSize: 13, color: "#3B82F6", marginTop: 2 }}>{s.label}</div>
@@ -168,12 +103,7 @@ export default function OurStoryPage() {
 
           {/* Right: accent card grid */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-            {[
-              { label: "Central Bank of UAE", sub: "Fully licensed & regulated", color: "#EFF6FF", border: "#BFDBFE" },
-              { label: "2+ Countries", sub: "Global payment corridors", color: "#F0FDF4", border: "#BBF7D0" },
-              { label: "AML Compliant", sub: "Full regulatory adherence", color: "#FFF7ED", border: "#FED7AA" },
-              { label: "24 × 7 Support", sub: "Dedicated relationship managers", color: "#F5F3FF", border: "#DDD6FE" },
-            ].map((c) => (
+            {ourStoryFeatureCards.map((c) => (
               <div key={c.label} style={{
                 background: c.color, border: `1.5px solid ${c.border}`,
                 borderRadius: 14, padding: "20px 18px",
@@ -207,10 +137,10 @@ export default function OurStoryPage() {
             }} />
 
             <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-              {milestones.map((m, i) => (
+              {ourStoryMilestones.map((m, i) => (
                 <div key={m.year} style={{
                   display: "flex", gap: 32, alignItems: "flex-start",
-                  paddingBottom: i < milestones.length - 1 ? 48 : 0,
+                  paddingBottom: i < ourStoryMilestones.length - 1 ? 48 : 0,
                 }}>
                   {/* Year badge */}
                   <div style={{
@@ -270,7 +200,7 @@ export default function OurStoryPage() {
             gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
             gap: 20,
           }}>
-            {team.map((p) => (
+            {ourStoryTeam.map((p) => (
               <div key={p.name} style={{
                 border: "1.5px solid #E2E8F0", borderRadius: 16,
                 padding: "28px 22px", background: "#fff",
