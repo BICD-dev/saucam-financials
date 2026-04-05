@@ -6,30 +6,39 @@ const sections = [
   {
     id: "corporate",
     title: "Corporate Remittance",
+    image:"/assets/manNcard.jpg",
     content:
       "Empower your business with global reach. Our remittance infrastructure allows for high-volume cross-border transfers with real-time tracking and automated compliance. Designed for scale, we help you settle vendor invoices and payroll across 50+ countries instantly.",
   },
   {
     id: "asset-backed",
     title: "Asset Backed Microfinance",
+    image:"/assets/scan4.jpg",
+
     content:
       "Unlock liquidity without liquidating your assets. We provide specialized credit facilities secured against your business assets. Our microfinance model focuses on sustainable growth, offering flexible repayment terms that align with your cash flow cycles.",
   },
   {
     id: "saucam-exchange",
     title: "Saucam Exchange App",
+    image:"/assets/cardInPhone.jpg",
+
     content:
       "The future of currency management in your pocket. Swap between major world currencies at mid-market rates. The Saucam app provides multi-currency wallets, instant P2P transfers, and detailed spending analytics for the modern entrepreneur.",
   },
   {
     id: "foreign-exchange",
     title: "Foreign Exchange",
+    image:"/assets/moneyCount.jpg",
+
     content:
       "Access deep liquidity pools and competitive FX rates. Our platform mitigates currency risk through forward contracts and spot trades, ensuring your profit margins remain protected despite market volatility.",
   },
   {
     id: "currency-broker",
     title: "Currency Broker",
+    image:"/assets/moneyCount2.jpg",
+
     content:
       "Personalized brokerage services for high-net-worth transactions. Our expert brokers provide market insights and execution strategies to ensure you get the best possible value on large-scale currency acquisitions.",
   },
@@ -125,25 +134,25 @@ const steps = [
 ];
 const slides = [
   {
-    src: "",          // replace with your image path
+    src: "/assets/office.jpg",          // replace with your image path
     alt: "Saucam business team in Lagos office",
     caption: "Our Lagos, Nigeria headquarters - where every global payment journey begins.",
     tag: "Our People",
   },
   {
-    src: "",          // replace with your image path
-    alt: "Cross-border payment dashboard on screen",
+    src: "/assets/cardInPhone.jpg",          // replace with your image path
+    alt: "Cross-border payment",
     caption: "Real-time transaction tracking across 50+ countries from a single dashboard.",
     tag: "Our Platform",
   },
   {
-    src: "",          // replace with your image path
+    src: "/assets/womanWcard.jpg",          // replace with your image path
     alt: "Saucam client success story",
     caption: "Empowering entrepreneurs across Africa with fast, reliable financial tools.",
     tag: "Our Impact",
   },
   {
-    src: "",          // replace with your image path
+    src: "/assets/chatWFriend.jpg",          // replace with your image path
     alt: "Saucam Exchange mobile app",
     caption: "The Saucam Exchange App — multi-currency wallets in your pocket, 24 × 7.",
     tag: "Our Product",
@@ -329,7 +338,7 @@ const Business = () => {
                   </button>
                 </div>
                 <div className="bg-slate-200 aspect-video rounded-xl shadow-inner flex items-center justify-center text-slate-400">
-                  [Illustration for {sec.title}]
+                  <img src="" alt="Illustration for {sec.title}"/>
                 </div>
               </div>
             </div>
