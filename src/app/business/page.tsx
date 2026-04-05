@@ -146,7 +146,7 @@ const slides = [
     tag: "Our Platform",
   },
   {
-    src: "/assets/womanWcard.jpg",          // replace with your image path
+    src: "/assets/womanNcard.jpg",          // replace with your image path
     alt: "Saucam client success story",
     caption: "Empowering entrepreneurs across Africa with fast, reliable financial tools.",
     tag: "Our Impact",
@@ -278,8 +278,15 @@ const Business = () => {
         </section>
         <section className="grid grid-cols-2 gap-4 h-96 md:h-100 mb-4">
           {/* Placeholder for your visuals */}
-          <div className="bg-slate-900 rounded-2xl border border-slate-800"></div>
-          <div className="bg-blue-600/20 rounded-2xl border border-blue-500/30"></div>
+          <div className="bg-slate-900 rounded-2xl border border-slate-800">
+            <img src="/assets/atm.jpg" alt="atm machine" />
+          </div>
+          <div className="bg-blue-600/20 rounded-2xl border border-blue-500/30">
+            <img src="/assets/cards.jpg" alt="Card" />
+          </div>
+          <div className="bg-slate-900 rounded-2xl border border-slate-800 col-span-2">
+            <img src="/assets/moneyCount.jpg" alt="Money counting" />
+          </div>
           <div className="bg-slate-900 rounded-2xl border border-slate-800 col-span-2"></div>
         </section>
       </div>
@@ -338,7 +345,7 @@ const Business = () => {
                   </button>
                 </div>
                 <div className="bg-slate-200 aspect-video rounded-xl shadow-inner flex items-center justify-center text-slate-400">
-                  <img src="" alt="Illustration for {sec.title}"/>
+                  <img src={sec.image} alt={`Illustration for ${sec.title}`} />
                 </div>
               </div>
             </div>
