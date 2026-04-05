@@ -16,6 +16,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Saucam Financials",
   description: "Top financial application for personal and business finance management.",
+  icons: {
+    icon: "/assets/logo/saucam_logoMark-WhiteBg-transparent.png",
+    shortcut: "/assets/logo/saucam_logoMark-WhiteBg-transparent.png",
+    apple: "/assets/logo/saucam_logoMark-WhiteBg-transparent.png",
+  },
 };
 
 export default function RootLayout({
