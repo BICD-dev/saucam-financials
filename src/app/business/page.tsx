@@ -280,38 +280,43 @@ const Business = () => {
             Open an account &rarr;
           </button>
         </section>
-        <section className="grid grid-cols-2 gap-4 h-96 md:h-100 mb-4">
-          {/* Placeholder for your visuals */}
-          <section className="grid grid-cols-2 gap-4 h-96 md:h-100 mb-4">
-            <div className="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden">
-              <Image
-                src="/assets/moneyCount.jpg"
-                alt="Money counting"
-                className="w-full h-full object-cover"
-                width={400}
-                height={400}
-              />
-            </div>
-            <div className="bg-blue-600/20 rounded-2xl border border-blue-500/30 overflow-hidden">
-              <Image
-                src="/assets/cards.jpg"
-                alt="Card"
-                className="w-full h-full object-cover"
-                width={400}
-                height={400}
-              />
-            </div>
-            <div className="bg-slate-900 rounded-2xl border border-slate-800 col-span-2 overflow-hidden">
-              
-              <Image
-                src="/assets/atm.jpg"
-                alt="atm machine"
-                className="w-full h-full object-cover"
-                width={800}
-                height={400}
-              />
-            </div>
-          </section>
+        <section className="relative h-[400px] md:h-[500px] w-full mb-6">
+          <div className="absolute top-6 left-2 md:left-8 w-[45%] h-[45%] rounded-2xl overflow-hidden border border-slate-700/70 shadow-2xl rotate-[-6deg] z-30">
+            <Image
+              src="/assets/moneyCount.jpg"
+              alt="Money counting"
+              className="w-full h-full object-cover"
+              width={420}
+              height={420}
+            />
+          </div>
+          <div className="absolute top-2 right-2 md:right-10 w-[44%] h-[42%] rounded-2xl overflow-hidden border border-blue-400/40 shadow-2xl rotate-[5deg] z-20">
+            <Image
+              src="/assets/cards.jpg"
+              alt="Business cards"
+              className="w-full h-full object-cover"
+              width={420}
+              height={400}
+            />
+          </div>
+          <div className="absolute bottom-6 left-4 md:left-14 w-[52%] h-[42%] rounded-2xl overflow-hidden border border-slate-700/70 shadow-2xl rotate-[3deg] z-10">
+            <Image
+              src="/assets/atm.jpg"
+              alt="ATM machine"
+              className="w-full h-full object-cover"
+              width={480}
+              height={360}
+            />
+          </div>
+          <div className="absolute bottom-10 right-0 md:right-8 w-[43%] h-[38%] rounded-2xl overflow-hidden border border-slate-700/70 shadow-2xl rotate-[-8deg] z-40">
+            <Image
+              src="/assets/manNcard.jpg"
+              alt="Business owner with card"
+              className="w-full h-full object-cover"
+              width={420}
+              height={340}
+            />
+          </div>
         </section>
       </div>
 
@@ -349,14 +354,14 @@ const Business = () => {
 
         {/* Content Sections */}
         <section className="max-w-6xl mx-auto px-2 sm:px-4 md:px-6">
-          {sections.map((sec) => (
+          {sections.map((sec, index) => (
             <div
               id={sec.id}
               key={sec.id}
               className="min-h-[70vh] flex flex-col justify-center border-b border-slate-200 last:border-0"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div>
+                <div className={index % 2 === 0 ? "lg:order-1" : "lg:order-2"}>
                   {/* <h3 className="text-blue-600 font-bold mb-4">Features // 0{sections.indexOf(sec) + 1}</h3> */}
                   <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 md:mb-6">
                     {sec.title}
@@ -368,7 +373,11 @@ const Business = () => {
                     Learn more about {sec.title} &rarr;
                   </button>
                 </div>
-                <div className="bg-slate-200 aspect-video rounded-xl shadow-inner flex items-center justify-center text-slate-400">
+                <div
+                  className={`bg-slate-200 aspect-video rounded-xl shadow-inner flex items-center justify-center text-slate-400 ${
+                    index % 2 === 0 ? "lg:order-2" : "lg:order-1"
+                  }`}
+                >
                   <Image src={sec.image} alt={`Illustration for ${sec.title}`} width={600} height={400} />
                 </div>
               </div>
