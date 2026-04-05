@@ -13,9 +13,9 @@ const columns: FooterColumn[] = [
     links: [
       { label: "Our Story", href: "/about/our-story" },
       { label: "Mission & Values", href: "/about/mission" },
-      { label: "Leadership Team", href: "/about/leadership" },
-      { label: "Awards & Recognition", href: "/about/awards" },
-      { label: "Partnerships", href: "/about/partnerships" },
+      // { label: "Leadership Team", href: "/about/leadership" },
+      // { label: "Awards & Recognition", href: "/about/awards" },
+      // { label: "Partnerships", href: "/about/partnerships" },
     ],
   },
   {

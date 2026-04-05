@@ -18,7 +18,7 @@ export const guarantees = [
       </svg>
     ),
     title: "Compliance",
-    body: "We cooperate and work closely with the Central Bank of the UAE and other international organizations to prevent money laundering and suspicious transactions. We have various practices and technology in place to observe the country's anti-money laundering laws.",
+    body: "We cooperate and work closely with the Central Bank of Nigeria and other international organizations to prevent money laundering and suspicious transactions. We have various practices and technology in place to observe the country's anti-money laundering laws.",
   },
   {
     icon: (
@@ -60,7 +60,7 @@ export const guarantees = [
       </svg>
     ),
     title: "Competitive Pricing",
-    body: "Our corporate services in Dubai and throughout the UAE come with the best market rates for international money transfers and foreign exchange services. Our commitment to providing you with competitive rates means you can trust us to help you save money and achieve your business goals.",
+    body: "Our corporate services in Lagos and throughout Nigeria come with the best market rates for international money transfers and foreign exchange services. Our commitment to providing you with competitive rates means you can trust us to help you save money and achieve your business goals.",
   },
   {
     icon: (

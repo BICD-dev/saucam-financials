@@ -562,8 +562,8 @@ export default function PersonalPage() {
                 {
                   icon: <Phone size={20} strokeWidth={2} />,
                   label: "Call Us",
-                  value: "+971 4 000 0000",
-                  sub: "Mon – Fri, 8am – 6pm GST",
+                  value: "08130416565",
+                  sub: "Mon - Fri, 8am - 6pm WAT",
                 },
                 {
                   icon: <Mail size={20} strokeWidth={2} />,
@@ -574,7 +574,7 @@ export default function PersonalPage() {
                 {
                   icon: <MapPin size={20} strokeWidth={2} />,
                   label: "Head Office",
-                  value: "Dubai, UAE",
+                  value: "Lagos, Nigeria",
                   sub: "Business Bay, Floor 12",
                 },
               ].map((item) => (

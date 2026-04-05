@@ -34,37 +34,6 @@ const sections = [
       "Personalized brokerage services for high-net-worth transactions. Our expert brokers provide market insights and execution strategies to ensure you get the best possible value on large-scale currency acquisitions.",
   },
 ];
-const testimonials = [
-  {
-    text: "Saucam transformed how we handle cross-border payments. What used to take 3–5 business days now settles in hours. The compliance tools alone have saved us weeks of manual work.",
-    name: "Adaeze Okonkwo",
-    role: "CEO, TradeBridge Nigeria",
-    initials: "AO",
-    color: "from-blue-500 to-blue-700",
-  },
-  {
-    text: "The FX rates are unbeatable. We've saved over $40,000 in conversion fees since switching to Saucam. Our treasury team has never been more confident in our currency positions.",
-    name: "Mohammed Al-Rashid",
-    role: "CFO, Gulf Import Co.",
-    initials: "MA",
-    color: "from-violet-500 to-violet-700",
-  },
-  {
-    text: "The asset-backed microfinance product gave us the capital injection we needed to fulfill a major contract. Approval was fast, terms were fair, and the team was genuinely helpful.",
-    name: "Sarah Chen",
-    role: "Founder, AsiaTrade Hub",
-    initials: "SC",
-    color: "from-emerald-500 to-emerald-700",
-  },
-  {
-    text: "Saucam's compliance tools are world-class. Our transactions clear without delays across all 50+ countries. It's the most reliable payment infrastructure we've ever worked with.",
-    name: "Emeka Obi",
-    role: "Director, Pan-African Logistics",
-    initials: "EO",
-    color: "from-orange-500 to-orange-600",
-  },
-];
- 
 const steps = [
   {
     number: "01",
@@ -154,12 +123,41 @@ const steps = [
     highlight: "Real-time tracking",
   },
 ];
+const slides = [
+  {
+    src: "",          // replace with your image path
+    alt: "Saucam business team in Lagos office",
+    caption: "Our Lagos, Nigeria headquarters - where every global payment journey begins.",
+    tag: "Our People",
+  },
+  {
+    src: "",          // replace with your image path
+    alt: "Cross-border payment dashboard on screen",
+    caption: "Real-time transaction tracking across 50+ countries from a single dashboard.",
+    tag: "Our Platform",
+  },
+  {
+    src: "",          // replace with your image path
+    alt: "Saucam client success story",
+    caption: "Empowering entrepreneurs across Africa with fast, reliable financial tools.",
+    tag: "Our Impact",
+  },
+  {
+    src: "",          // replace with your image path
+    alt: "Saucam Exchange mobile app",
+    caption: "The Saucam Exchange App — multi-currency wallets in your pocket, 24 × 7.",
+    tag: "Our Product",
+  },
+];
 const Business = () => {
   const [activeSection, setActiveSection] = useState("");
   const [activeStep, setActiveStep] = useState(0);
   const [stepsProgress, setStepsProgress] = useState(0);
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+
+    const [slideIndex, setSlideIndex] = useState(0);
+  const [slideAnimating, setSlideAnimating] = useState(false);
+  const [slideDirection, setSlideDirection] = useState<"next" | "prev">("next");
+ 
  
   const stepsRef = useRef<HTMLDivElement>(null);
   
@@ -226,29 +224,29 @@ const Business = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-    /* ── Testimonial auto-advance ─── */
-  const goToTestimonial = useCallback(
-    (next: number) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
+   const goToSlide = useCallback(
+    (next: number, dir: "next" | "prev" = "next") => {
+      if (slideAnimating) return;
+      setSlideDirection(dir);
+      setSlideAnimating(true);
       setTimeout(() => {
-        setTestimonialIndex(next);
-        setIsAnimating(false);
-      }, 350);
+        setSlideIndex(next);
+        setSlideAnimating(false);
+      }, 380);
     },
-    [isAnimating]
+    [slideAnimating],
   );
  
+  /* Auto-advance every 5 s */
   useEffect(() => {
     const timer = setInterval(() => {
-      goToTestimonial((testimonialIndex + 1) % testimonials.length);
+      goToSlide((slideIndex + 1) % slides.length, "next");
     }, 5000);
     return () => clearInterval(timer);
-  }, [testimonialIndex, goToTestimonial]);
+  }, [slideIndex, goToSlide]);
  
   const progressPercent = stepsProgress * 100;
- 
-  const t = testimonials[testimonialIndex];
+  const currentSlide = slides[slideIndex];
  
   return (
     <main className="bg-slate-950 text-white">
@@ -339,9 +337,9 @@ const Business = () => {
         </section>
       </div>
 
-      {/* ── Section 3: CTA + Testimonial Slider ─────────────── */}
+       {/* ── Section 3: CTA + Image Slider ────────────────────── */}
       <div className="min-h-screen bg-slate-950 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 px-3 sm:px-6 lg:px-10 py-16 md:py-24 items-center">
-        {/* Left — CTA copy */}
+        {/* Left — CTA copy (untouched) */}
         <div className="flex flex-col gap-6">
           <span className="text-blue-400 text-sm font-semibold uppercase tracking-widest">
             Trusted by thousands
@@ -354,7 +352,7 @@ const Business = () => {
             today.
           </h1>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed max-w-md">
-            Join over 12,000 businesses across Africa and the globe who rely on
+            Join multiple businesses across Africa and the globe who rely on
             Saucam every day to move money, grow faster, and do more.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -367,7 +365,7 @@ const Business = () => {
           </div>
  
           {/* Stats row */}
-          <div className="grid grid-cols-3 gap-4 md:gap-6 mt-4 pt-8 border-t border-slate-800">
+          {/* <div className="grid grid-cols-3 gap-4 md:gap-6 mt-4 pt-8 border-t border-slate-800">
             {[
               { value: "12K+", label: "Businesses" },
               { value: "50+", label: "Countries" },
@@ -380,164 +378,196 @@ const Business = () => {
                 <div className="text-slate-500 text-sm mt-1">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
  
-        {/* Right — Testimonial slider */}
-        <div className="flex flex-col gap-6">
-          {/* Card */}
-          <div
-            className="relative bg-slate-900 border border-slate-700/60 rounded-2xl p-8 overflow-hidden"
-            style={{ minHeight: 280 }}
+        {/* Right — Image Slider */}
+        <div className="flex flex-col gap-4">
+ 
+          {/* ── Main image frame ── */}
+          <div className="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700/60"
+            style={{ aspectRatio: "16/10" }}
           >
-            {/* Decorative quote mark */}
-            <div
-              className="absolute top-4 right-6 text-slate-700 select-none"
-              style={{ fontSize: 96, lineHeight: 1, fontFamily: "Georgia, serif" }}
-              aria-hidden
-            >
-              &ldquo;
-            </div>
- 
-            {/* Animated content */}
-            <div
-              key={testimonialIndex}
-              style={{
-                animation: `testimonialIn 0.4s ease both`,
-              }}
-            >
-              <p className="text-slate-200 text-lg leading-relaxed mb-8 relative z-10">
-                &ldquo;{t.text}&rdquo;
-              </p>
- 
-              <div className="flex items-center gap-4">
-                <div
-                  className={`w-12 h-12 rounded-full bg-linear-to-br ${t.color} flex items-center justify-center text-white font-bold text-sm shrink-0`}
-                >
-                  {t.initials}
-                </div>
-                <div>
-                  <p className="font-semibold text-white">{t.name}</p>
-                  <p className="text-slate-400 text-sm">{t.role}</p>
-                </div>
- 
-                {/* Stars */}
-                <div className="ml-auto flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg
-                      key={i}
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="#FBBF24"
-                    >
-                      <path d="M7 1l1.5 3.2 3.5.5-2.5 2.4.6 3.4L7 9l-3.1 1.5.6-3.4L2 4.7l3.5-.5z" />
-                    </svg>
-                  ))}
-                </div>
+            {/* Image / placeholder */}
+            {currentSlide.src ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                key={slideIndex}
+                src={currentSlide.src}
+                alt={currentSlide.alt}
+                className="w-full h-full object-cover"
+                style={{
+                  animation: `slideIn${slideDirection === "next" ? "Right" : "Left"} 0.38s cubic-bezier(0.22,1,0.36,1) both`,
+                }}
+              />
+            ) : (
+              /* Placeholder shown until real images are provided */
+              <div
+                key={slideIndex}
+                className="w-full h-full flex flex-col items-center justify-center gap-3"
+                style={{
+                  background: `linear-gradient(135deg, #0F172A 0%, #1E293B 100%)`,
+                  animation: `slideIn${slideDirection === "next" ? "Right" : "Left"} 0.38s cubic-bezier(0.22,1,0.36,1) both`,
+                }}
+              >
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" opacity="0.3">
+                  <rect x="4" y="10" width="40" height="28" rx="3" stroke="white" strokeWidth="2"/>
+                  <circle cx="16" cy="20" r="4" stroke="white" strokeWidth="2"/>
+                  <path d="M4 32l10-8 8 6 8-10 14 10" stroke="white" strokeWidth="2" strokeLinejoin="round"/>
+                </svg>
+                <span className="text-slate-500 text-sm">Image coming soon</span>
               </div>
-            </div>
-          </div>
+            )}
  
-          {/* Controls */}
-          <div className="flex items-center justify-between">
-            {/* Dot indicators */}
-            <div className="flex gap-2">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() =>
-                    goToTestimonial(i)
-                  }
-                  className="h-2 rounded-full transition-all duration-300"
-                  style={{
-                    width: i === testimonialIndex ? 24 : 8,
-                    background:
-                      i === testimonialIndex
-                        ? "#3B82F6"
-                        : "rgba(255,255,255,0.2)",
-                  }}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                />
-              ))}
+            {/* Tag pill — top left */}
+            <div
+              key={`tag-${slideIndex}`}
+              className="absolute top-4 left-4"
+              style={{ animation: "captionFadeIn 0.5s 0.2s both" }}
+            >
+              <span className="text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
+                style={{
+                  background: "rgba(59,130,246,0.85)",
+                  backdropFilter: "blur(6px)",
+                  color: "#fff",
+                  letterSpacing: "0.08em",
+                }}
+              >
+                {currentSlide.tag}
+              </span>
             </div>
  
-            {/* Prev / Next arrows */}
-            <div className="flex gap-2">
-              {(
-                [
-                  {
-                    dir: "prev" as const,
-                    label: "Previous",
-                    path: "M9 6L5 10l4 4",
-                  },
-                  {
-                    dir: "next" as const,
-                    label: "Next",
-                    path: "M5 6l4 4-4 4",
-                  },
-                ] as const
-              ).map(({ dir, label, path }) => (
+            {/* Slide counter — top right */}
+            <div className="absolute top-4 right-4 text-xs font-semibold text-white/50">
+              {String(slideIndex + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
+            </div>
+ 
+            {/* Prev / Next arrow buttons overlaid on image */}
+            <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 pointer-events-none">
+              {(["prev", "next"] as const).map((dir) => (
                 <button
                   key={dir}
                   onClick={() =>
-                    goToTestimonial(
+                    goToSlide(
                       dir === "next"
-                        ? (testimonialIndex + 1) % testimonials.length
-                        : (testimonialIndex - 1 + testimonials.length) %
-                            testimonials.length
+                        ? (slideIndex + 1) % slides.length
+                        : (slideIndex - 1 + slides.length) % slides.length,
+                      dir,
                     )
                   }
-                  className="w-10 h-10 rounded-full border border-slate-600 hover:border-blue-500 flex items-center justify-center transition-colors"
-                  aria-label={label}
+                  className="pointer-events-auto w-9 h-9 rounded-full flex items-center justify-center transition-all"
+                  style={{
+                    background: "rgba(15,23,42,0.6)",
+                    backdropFilter: "blur(6px)",
+                    border: "1px solid rgba(255,255,255,0.12)",
+                  }}
+                  aria-label={dir === "next" ? "Next slide" : "Previous slide"}
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                    stroke="white" strokeWidth="1.8" strokeLinecap="round"
                   >
-                    <path d={path} />
+                    <path d={dir === "next" ? "M5 4l4 4-4 4" : "M11 4L7 8l4 4"} />
                   </svg>
                 </button>
               ))}
             </div>
           </div>
  
-          {/* Mini testimonial previews */}
-          <div className="grid grid-cols-2 gap-3 mt-2">
-            {testimonials
-              .filter((_, i) => i !== testimonialIndex)
-              .slice(0, 2)
-              .map((tm) => (
-                <div
-                  key={tm.name}
-                  className="bg-slate-900/50 border border-slate-800 rounded-xl p-4 flex items-center gap-3 cursor-pointer hover:border-slate-600 transition-colors"
-                  onClick={() =>
-                    goToTestimonial(
-                      testimonials.indexOf(tm)
-                    )
-                  }
-                >
-                  <div
-                    className={`w-8 h-8 rounded-full bg-linear-to-br ${tm.color} flex items-center justify-center text-white font-bold text-xs shrink-0`}
-                  >
-                    {tm.initials}
-                  </div>
-                  <div className="overflow-hidden">
-                    <p className="text-white text-xs font-semibold truncate">
-                      {tm.name}
-                    </p>
-                    <p className="text-slate-500 text-xs truncate">{tm.role}</p>
-                  </div>
-                </div>
-              ))}
+          {/* ── Caption bar ── */}
+          <div
+            key={`caption-${slideIndex}`}
+            className="rounded-xl px-5 py-4 flex items-start gap-3"
+            style={{
+              background: "rgba(30,41,59,0.8)",
+              border: "1px solid rgba(255,255,255,0.07)",
+              animation: "captionFadeIn 0.45s 0.15s both",
+            }}
+          >
+            {/* Blue accent line */}
+            <div className="w-1 self-stretch rounded-full bg-blue-500 shrink-0 mt-0.5" />
+            <p className="text-slate-300 text-sm leading-relaxed">{currentSlide.caption}</p>
           </div>
+ 
+          {/* ── Dot indicators + thumbnail strip ── */}
+          <div className="flex items-center gap-3">
+            {/* Dots */}
+            <div className="flex gap-1.5 items-center">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goToSlide(i, i > slideIndex ? "next" : "prev")}
+                  className="rounded-full transition-all duration-300"
+                  style={{
+                    width: i === slideIndex ? 22 : 6,
+                    height: 6,
+                    background: i === slideIndex ? "#3B82F6" : "rgba(255,255,255,0.2)",
+                  }}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
+ 
+            {/* Progress bar */}
+            <div className="flex-1 h-px bg-slate-700 relative overflow-hidden rounded-full">
+              <div
+                className="absolute left-0 top-0 h-full bg-blue-500 rounded-full"
+                style={{
+                  width: `${((slideIndex + 1) / slides.length) * 100}%`,
+                  transition: "width 0.4s ease",
+                }}
+              />
+            </div>
+          </div>
+ 
+          {/* ── Thumbnail strip ── */}
+          <div className="grid grid-cols-4 gap-2 mt-1">
+            {slides.map((slide, i) => (
+              <button
+                key={i}
+                onClick={() => goToSlide(i, i > slideIndex ? "next" : "prev")}
+                className="relative rounded-lg overflow-hidden transition-all duration-200"
+                style={{
+                  aspectRatio: "4/3",
+                  border: i === slideIndex
+                    ? "2px solid #3B82F6"
+                    : "2px solid transparent",
+                  opacity: i === slideIndex ? 1 : 0.45,
+                }}
+                aria-label={`Go to slide: ${slide.tag}`}
+              >
+                {slide.src ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img src={slide.src} alt={slide.alt} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-slate-600"
+                    style={{ background: "#1E293B" }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.3"/>
+                      <circle cx="5.5" cy="7" r="1.5" stroke="currentColor" strokeWidth="1.3"/>
+                      <path d="M1 11l4-3 3 2.5 3-4 4 4.5" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                )}
+                {/* Active overlay */}
+                {i === slideIndex && (
+                  <div className="absolute inset-0 bg-blue-500/10" />
+                )}
+                {/* Tag label */}
+                <div className="absolute bottom-0 left-0 right-0 px-1.5 py-1"
+                  style={{ background: "rgba(0,0,0,0.55)" }}
+                >
+                  <span className="text-white text-[9px] font-bold uppercase tracking-wide truncate block">
+                    {slide.tag}
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+ 
         </div>
       </div>
+ 
       {/* section 4 */}
       <div className="bg-slate-200 min-h-screen px-3 sm:px-6 lg:px-10 flex flex-col gap-10 md:gap-14 pt-8 text-black">
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-0">

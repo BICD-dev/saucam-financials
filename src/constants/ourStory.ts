@@ -2,15 +2,15 @@ export const ourStoryMilestones = [
   {
     year: "2023",
     title: "The Founding Vision",
-    body: "Saucam Financials was born in Dubai out of a simple but powerful observation: businesses and individuals moving money across borders were being let down by slow, opaque, and expensive systems. Our founders set out to change that.",
+    body: "Saucam Financials was born in Lagos, Nigeria out of a simple but powerful observation: businesses and individuals moving money across borders were being let down by slow, opaque, and expensive systems. Our founders set out to change that.",
   },
   {
-    year: "2024",
+    year: "2026",
     title: "First Regulatory Licence",
-    body: "After two years of laying the groundwork, Saucam received its first licence from the Central Bank of the UAE - a milestone that signalled our commitment to operating at the highest standards of compliance and trust.",
+    body: "After two years of laying the groundwork, Saucam received its first licence from the Central Bank of Nigeria - a milestone that signalled our commitment to operating at the highest standards of compliance and trust.",
   },
   {
-    year: "2025",
+    year: "2026",
     title: "Expanding Across Africa",
     body: "Recognising the enormous demand for reliable cross-border payments on the African continent, we launched dedicated corridors into Nigeria, Ghana, Kenya and South Africa, serving thousands of businesses for the first time.",
   },
@@ -34,10 +34,10 @@ export const ourStoryStats = [
 
 export const ourStoryTeam = [
   {
-    initials: "AK",
-    name: "Amara Kone",
+    initials: "SA",
+    name: "Samuel A.",
     role: "Co-Founder & CEO",
-    bio: "Former investment banker with 15 years of experience across JPMorgan and Standard Chartered. Amara's vision for accessible cross-border finance is the heartbeat of Saucam.",
+    bio: "Former investment banker with 15 years of experience across JPMorgan and Standard Chartered. Samuel's vision for accessible cross-border finance is the heartbeat of Saucam.",
     color: "#DBEAFE",
     textColor: "#1D4ED8",
   },
@@ -69,7 +69,7 @@ export const ourStoryTeam = [
 
 export const ourStoryFeatureCards = [
   {
-    label: "Central Bank of UAE",
+    label: "Central Bank of Nigeria",
     sub: "Fully licensed & regulated",
     color: "#EFF6FF",
     border: "#BFDBFE",

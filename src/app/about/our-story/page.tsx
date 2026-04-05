@@ -1,7 +1,6 @@
 import {
   ourStoryFeatureCards,
   ourStoryMilestones,
-  ourStoryStats,
   ourStoryTeam,
 } from "@/constants/ourStory";
 
@@ -51,12 +50,12 @@ export default function OurStoryPage() {
             fontSize: 19, color: "#1E40AF", lineHeight: 1.75,
             maxWidth: 620, marginBottom: 48,
           }}>
-            From a small office in Dubai to a pan-African and global financial
+            From a small office in Lagos, Nigeria to a pan-African and global financial
             platform — this is the story of how Saucam Financials was built on
             the belief that money should move as freely as people.
           </p>
 
-          {/* Stat row */}
+          {/*
           <div style={{ display: "flex", gap: 40, flexWrap: "wrap" }}>
             {ourStoryStats.map((s) => (
               <div key={s.label}>
@@ -65,6 +64,7 @@ export default function OurStoryPage() {
               </div>
             ))}
           </div>
+          */}
         </div>
       </section>
 
@@ -89,14 +89,14 @@ export default function OurStoryPage() {
               A financial institution built on trust, reach, and technology.
             </h2>
             <p style={{ fontSize: 16, color: "#334155", lineHeight: 1.8, marginBottom: 16 }}>
-              Saucam Financials is a UAE-based international financial services provider
-              regulated by the Central Bank of the UAE. We offer a full spectrum of services —
+              Saucam Financials is a Nigeria-based international financial services provider
+              regulated by the Central Bank of Nigeria. We offer a full spectrum of services —
               from corporate remittance and foreign exchange to asset-backed microfinance and
               investment products.
             </p>
             <p style={{ fontSize: 16, color: "#334155", lineHeight: 1.8 }}>
               We believe that access to world-class financial tools should not be limited by
-              geography. Whether you are an entrepreneur in Lagos, a business owner in Dubai,
+              geography. Whether you are an entrepreneur in Lagos, a business owner in Lagos,
               or a family sending money home from London — Saucam is built for you.
             </p>
           </div>
