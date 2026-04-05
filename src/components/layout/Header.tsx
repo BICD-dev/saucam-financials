@@ -154,17 +154,6 @@ const ChevronIcon = () => (
   </svg>
 );
 
-const LogoMark = () => (
-  <div className="w-[34px] h-[34px] rounded-lg bg-blue-600 flex items-center justify-center">
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <rect x="2" y="2" width="7" height="7" rx="1.5" fill="white" />
-      <rect x="11" y="2" width="7" height="7" rx="1.5" fill="rgba(255,255,255,0.5)" />
-      <rect x="2" y="11" width="7" height="7" rx="1.5" fill="rgba(255,255,255,0.5)" />
-      <rect x="11" y="11" width="7" height="7" rx="1.5" fill="white" />
-    </svg>
-  </div>
-);
-
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -224,7 +213,7 @@ export default function Header() {
           {navItems.map((item) => (
             <div
               key={item.label}
-              className="relative"
+              className="relative pb-2 -mb-2"
               onMouseEnter={() => item.dropdown && setOpenMenu(item.label)}
               onMouseLeave={() => setOpenMenu(null)}
             >
@@ -266,7 +255,7 @@ export default function Header() {
               {item.dropdown && openMenu === item.label && (
                 <div
                   className={cn(
-                    "absolute top-[calc(100%+8px)] left-0 border rounded-xl p-2 min-w-[250px] flex flex-col gap-0.5 shadow-2xl z-[200]",
+                    "absolute top-full left-0 border rounded-xl p-2 min-w-[250px] flex flex-col gap-0.5 shadow-2xl z-[200]",
                     isAbout ? "bg-white border-slate-200" : "bg-blue-950 border-white/10"
                   )}
                 >

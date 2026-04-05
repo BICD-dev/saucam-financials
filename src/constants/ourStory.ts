@@ -1,6 +1,6 @@
 export const ourStoryMilestones = [
   {
-    year: "2023",
+    year: "2021",
     title: "The Founding Vision",
     body: "Saucam Financials was born in Lagos, Nigeria out of a simple but powerful observation: businesses and individuals moving money across borders were being let down by slow, opaque, and expensive systems. Our founders set out to change that.",
   },

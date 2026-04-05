@@ -267,7 +267,7 @@ const Business = () => {
       <div className="min-h-screen px-3 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <section className="flex flex-col gap-6 items-left justify-center mt-4 md:mt-0">
           <p className="text-sm font-semibold text-white bg-slate-800 border border-slate-700 rounded-full w-fit px-4 py-1">
-            Africa&apos;s fastest growing financial Institution 2023-2025
+            Africa&apos;s fastest growing financial Institution 2021-2025
           </p>
           <h1 className="font-bold text-5xl md:text-7xl leading-tight">
             International Payment Solutions
@@ -341,7 +341,7 @@ const Business = () => {
                   onClick={(event) => handleSectionNavClick(event, sec.id)}
                   className={`inline-block px-2 py-1 text-xs md:text-sm font-bold uppercase tracking-wide md:tracking-wider transition-all ${
                     activeSection === sec.id
-                      ? "text-slate-600 bg-blue-100 rounded-md "
+                      ? "text-slate-600 bg-blue-200 rounded-md "
                       : "text-slate-500 hover:text-slate-900"
                   }`}
                 >
