@@ -170,7 +170,7 @@ export default function Header() {
         isAbout ? "bg-white border-slate-200" : "bg-slate-950 border-white/10"
       )}
     >
-      <div className="max-w-295  px-8 flex items-center h-[82px] gap-8 justify-between">
+      <div className="max-w-295  px-4 flex items-center h-[82px] gap-8 justify-between">
         {/* Logo */}
         <Link href="/business" className="flex items-center gap-3 no-underline shrink-0">
           <Image src="/assets/logo/saucam_logoMark-WhiteBg-transparent.png" alt="Saucam Logo" width={50} height={60} />
@@ -184,7 +184,7 @@ export default function Header() {
         <div className={cn("flex items-center gap-2 rounded-full p-1 shrink-0", isAbout ? "bg-slate-100" : "bg-white/5")}>
           <Link
             href="/personal"
-            className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+            className={`rounded-full py-2 text-sm font-semibold transition-colors ${
               isPersonal
                 ? "bg-blue-600 text-white"
                 : isAbout
