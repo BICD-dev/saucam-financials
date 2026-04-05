@@ -339,9 +339,9 @@ const Business = () => {
                 <a
                   href={`#${sec.id}`}
                   onClick={(event) => handleSectionNavClick(event, sec.id)}
-                  className={`inline-block text-xs md:text-sm font-bold uppercase tracking-wide md:tracking-wider transition-all ${
+                  className={`inline-block px-2 py-1 text-xs md:text-sm font-bold uppercase tracking-wide md:tracking-wider transition-all ${
                     activeSection === sec.id
-                      ? "text-blue-600 border-b-2 pb-1"
+                      ? "text-slate-600 bg-blue-100 rounded-md "
                       : "text-slate-500 hover:text-slate-900"
                   }`}
                 >

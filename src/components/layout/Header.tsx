@@ -184,7 +184,7 @@ export default function Header() {
       <div className="max-w-295  px-8 flex items-center h-[82px] gap-8 justify-between">
         {/* Logo */}
         <Link href="/business" className="flex items-center gap-3 no-underline shrink-0">
-          <Image src="/assets/logo/saucam_logoMark-WhiteBg-transparent.png" alt="Saucam Logo" width={136} height={140} />
+          <Image src="/assets/logo/saucam_logoMark-WhiteBg-transparent.png" alt="Saucam Logo" width={50} height={60} />
               {/* <LogoMark /> */}
           <span className={cn("font-['Syne'] text-2xl font-bold -tracking-[0.3px] lg:block", isAbout ? "text-slate-900" : "text-white")}>
             <span className={cn("hidden md:block", isAbout ? "text-slate-900" : "text-white")}>Saucam</span>
