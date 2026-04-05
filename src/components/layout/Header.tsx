@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-
+import Image from "next/image";
 type DropdownItem = {
   label: string;
   description: string;
@@ -181,21 +181,21 @@ export default function Header() {
         isAbout ? "bg-white border-slate-200" : "bg-slate-950 border-white/10"
       )}
     >
-      <div className="max-w-[1320px] w-full mx-auto px-4 sm:px-8 lg:px-12 flex items-center h-[86px] gap-10 lg:gap-14 justify-between">
+      <div className="max-w-295  px-8 flex items-center h-[82px] gap-8 justify-between">
         {/* Logo */}
         <Link href="/business" className="flex items-center gap-3 no-underline shrink-0">
-          {/* <Image src="/assets/saucam_logoMark-WhiteBg-transparent.png" alt="Saucam Logo" className="w-40 h-35" /> */}
-              <LogoMark />
+          <Image src="/assets/saucam_logoMark-WhiteBg-transparent.png" alt="Saucam Logo" width={136} height={140} />
+              {/* <LogoMark /> */}
           <span className={cn("font-['Syne'] text-2xl font-bold -tracking-[0.3px] lg:block", isAbout ? "text-slate-900" : "text-white")}>
             <span className={cn("hidden md:block", isAbout ? "text-slate-900" : "text-white")}>Saucam</span>
           </span>
         </Link>
 
         {/* Personal / Business tabs */}
-        <div className={cn("flex items-center gap-2.5 rounded-full p-1.5 shrink-0", isAbout ? "bg-slate-100" : "bg-white/5")}>
+        <div className={cn("flex items-center gap-2 rounded-full p-1 shrink-0", isAbout ? "bg-slate-100" : "bg-white/5")}>
           <Link
             href="/personal"
-            className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
+            className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
               isPersonal
                 ? "bg-blue-600 text-white"
                 : isAbout
@@ -207,7 +207,7 @@ export default function Header() {
           </Link>
           <Link
             href="/business"
-            className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
+            className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
               isBusiness
                 ? "bg-blue-600 text-white"
                 : isAbout
@@ -220,7 +220,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-2 lg:gap-3 flex-1 ">
+        <nav className="hidden md:flex items-center gap-1 lg:gap-3 flex-1 ">
           {navItems.map((item) => (
             <div
               key={item.label}
@@ -232,7 +232,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1.5 px-3 py-2.5 rounded-lg text-base font-semibold cursor-pointer no-underline whitespace-nowrap transition-colors",
+                    "flex items-center gap-1.5 px-2 py-2.5 rounded-lg text-base font-semibold cursor-pointer no-underline whitespace-nowrap transition-colors",
                     isAbout
                       ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
                       : "text-white hover:text-white hover:bg-white/7"
@@ -243,7 +243,7 @@ export default function Header() {
               ) : (
                 <span
                   className={cn(
-                    "flex items-center gap-1.5 px-3 py-2.5 rounded-lg text-base font-semibold cursor-pointer whitespace-nowrap transition-colors",
+                    "flex items-center gap-1.5 px-2 py-2.5 rounded-lg text-base font-semibold cursor-pointer whitespace-nowrap transition-colors",
                     isAbout
                       ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
                       : "text-white hover:text-white hover:bg-white/7"
@@ -304,11 +304,11 @@ export default function Header() {
         </nav>
 
         {/* CTA buttons */}
-        <div className="hidden md:flex items-center gap-3 shrink-0">
+        <div className="hidden md:flex items-center gap-2 shrink-0">
           <Link
             href="/login"
             className={cn(
-              "px-6 py-2.5 rounded-lg text-base font-semibold no-underline transition-colors",
+              "px-5 py-2.5 rounded-lg text-base font-semibold no-underline transition-colors",
               isAbout ? "text-slate-700 hover:text-slate-900" : "text-white hover:text-white"
             )}
           >
@@ -316,7 +316,7 @@ export default function Header() {
           </Link>
           <Link
             href="/signup"
-            className="px-7 py-2.5 rounded-lg text-base font-semibold bg-blue-600 text-white no-underline transition-colors hover:bg-blue-500"
+            className="px-6 py-2.5 rounded-lg text-base font-semibold bg-blue-600 text-white no-underline transition-colors hover:bg-blue-500"
           >
             Get started
           </Link>
