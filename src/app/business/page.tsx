@@ -265,7 +265,7 @@ const Business = () => {
     <main className="bg-slate-950 text-white">
       {/* Section 1: Hero */}
       <div className="min-h-screen px-3 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <section className="flex flex-col gap-6 items-left justify-center ">
+        <section className="flex flex-col gap-6 items-left justify-center mt-4 md:mt-0">
           <p className="text-sm font-semibold text-white bg-slate-800 border border-slate-700 rounded-full w-fit px-4 py-1">
             Africa&apos;s fastest growing financial Institution 2023-2025
           </p>
@@ -310,7 +310,7 @@ const Business = () => {
           </div>
           <div className="absolute bottom-10 right-0 md:right-8 w-[43%] h-[38%] rounded-2xl overflow-hidden border border-slate-700/70 shadow-2xl rotate-[-8deg] z-40">
             <Image
-              src="/assets/manNcard.jpg"
+              src="/assets/posNcard.jpg"
               alt="Business owner with card"
               className="w-full h-full object-cover"
               width={420}
