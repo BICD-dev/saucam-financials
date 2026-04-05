@@ -60,9 +60,9 @@ const navItems: NavItem[] = [
     label: "Products",
     dropdown: [
       {
-        label: "Business Banking",
-        description: "Accounts & transfers",
-        href: "/products/banking",
+        label: "Corporate Remittance",
+        description: "High-volume cross-border transfers",
+        href: "/business#corporate",
         icon: (
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <rect x="2" y="4" width="12" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
@@ -71,9 +71,9 @@ const navItems: NavItem[] = [
         ),
       },
       {
-        label: "Point of Sale",
-        description: "POS terminals & payments",
-        href: "/products/pos",
+        label: "Foreign Exchange",
+        description: "Competitive rates and currency tools",
+        href: "/business#foreign-exchange",
         icon: (
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M3 5h10M3 8h7M3 11h5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
@@ -81,13 +81,24 @@ const navItems: NavItem[] = [
         ),
       },
       {
-        label: "Payroll",
-        description: "Manage team payments",
-        href: "/products/payroll",
+        label: "Credit Card Payments",
+        description: "Secure global card transactions",
+        href: "/personal",
         icon: (
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <circle cx="8" cy="8" r="5.5" stroke="currentColor" strokeWidth="1.3" />
             <path d="M8 5v3l2 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+          </svg>
+        ),
+      },
+      {
+        label: "Investment & Savings",
+        description: "Grow funds with tailored plans",
+        href: "/personal",
+        icon: (
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 10a5 5 0 1010 0H3z" stroke="currentColor" strokeWidth="1.3" />
+            <path d="M8 10V3M6 5l2-2 2 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         ),
       },

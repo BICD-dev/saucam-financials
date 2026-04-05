@@ -21,12 +21,12 @@ const columns: FooterColumn[] = [
   {
     heading: "Products",
     links: [
-      { label: "Business Banking", href: "/products/banking" },
-      { label: "Point of Sale", href: "/products/pos" },
-      { label: "Payroll Management", href: "/products/payroll" },
-      { label: "Invoice & Payments", href: "/products/invoices" },
-      { label: "Business Loans", href: "/products/loans" },
-      { label: "Expense Cards", href: "/products/cards" },
+      { label: "Corporate Remittance", href: "/business#corporate" },
+      { label: "Asset Backed Microfinance", href: "/business#asset-backed" },
+      { label: "Foreign Exchange", href: "/business#foreign-exchange" },
+      { label: "Credit Card Payments", href: "/personal" },
+      { label: "TravelCard", href: "/personal" },
+      { label: "Investment & Savings", href: "/personal" },
     ],
   },
   {
