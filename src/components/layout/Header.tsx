@@ -181,7 +181,7 @@ export default function Header() {
         </Link>
 
         {/* Personal / Business tabs */}
-        <div className={cn("flex items-center gap-2 rounded-full p-1 shrink-0", isAbout ? "bg-slate-100" : "bg-white/5")}>
+        <div className={cn("flex items-center gap-2 rounded-full px-4 p-1 shrink-0", isAbout ? "bg-slate-100" : "bg-white/5")}>
           <Link
             href="/personal"
             className={`rounded-full py-2 text-sm font-semibold transition-colors ${
