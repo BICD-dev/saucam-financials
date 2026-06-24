@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { ArrowLeftRight, PiggyBank, CreditCard, Banknote } from "lucide-react";
 import BusinessHero from "@/components/BusinessHero";
+import { useAppModal } from "@/components/AppModalProvider";
 
 const sections = [
   {
@@ -173,6 +174,7 @@ const slides = [
   },
 ];
 const Business = () => {
+  const { openModal } = useAppModal();
   const [activeSection, setActiveSection] = useState("");
   const [activeStep, setActiveStep] = useState(0);
   const [stepsProgress, setStepsProgress] = useState(0);
@@ -360,7 +362,11 @@ const Business = () => {
             Saucam every day to move money, grow faster, and do more.
           </p>
           <div className="flex gap-4 flex-wrap">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md transition-colors">
+            <button
+              type="button"
+              onClick={openModal}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md transition-colors"
+            >
               Open an account &rarr;
             </button>
             <button className="border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white font-semibold py-3 px-8 rounded-md transition-colors">
@@ -897,7 +903,11 @@ const Business = () => {
                       className="mt-2"
                       style={{ animation: "stepCardIn 0.5s 0.2s both" }}
                     >
-                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors text-sm">
+                      <button
+                        type="button"
+                        onClick={openModal}
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors text-sm"
+                      >
                         Open your account &rarr;
                       </button>
                     </div>

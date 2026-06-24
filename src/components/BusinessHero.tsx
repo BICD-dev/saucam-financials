@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./BusinessHero.module.css";
+import { useAppModal } from "@/components/AppModalProvider";
 
 type Transform = { x: number; y: number; r: number; s: number };
 type CardState = { start: Transform; end: Transform; z: number };
@@ -28,6 +29,7 @@ const cards = [
 ];
 
 export default function BusinessHero() {
+  const { openModal } = useAppModal();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const deckStageRef = useRef<HTMLDivElement>(null);
@@ -136,9 +138,9 @@ export default function BusinessHero() {
               Collect payments, access loans, and manage operations with a
               business banking solution that meets all your needs.
             </p>
-            <a href="/signup" className={styles.cta}>
+            <button type="button" onClick={openModal} className={styles.cta}>
               Open an account &rarr;
-            </a>
+            </button>
           </div>
 
           <div ref={deckStageRef} className={styles.deckStage}>

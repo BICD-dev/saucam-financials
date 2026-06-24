@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollHero from "@/components/ScrollHero";
+import { useAppModal } from "@/components/AppModalProvider";
 import {
   ArrowLeftRight,
   Wallet,
@@ -72,6 +73,8 @@ const steps = [
 ];
 
 const Home = () => {
+  const { openModal } = useAppModal();
+
   return (
     <main className="bg-white text-slate-900">
       <ScrollHero />
@@ -235,12 +238,13 @@ const Home = () => {
             Join thousands across Africa and the globe who rely on Saucam to
             send, spend, and grow across currencies.
           </p>
-          <Link
-            href="/signup"
-            className="bg-white text-blue-700 hover:bg-blue-50 transition-colors font-semibold py-3.5 px-8 rounded-full no-underline"
+          <button
+            type="button"
+            onClick={openModal}
+            className="bg-white text-blue-700 hover:bg-blue-50 transition-colors font-semibold py-3.5 px-8 rounded-full"
           >
             Open an account &rarr;
-          </Link>
+          </button>
         </div>
       </section>
       </div>

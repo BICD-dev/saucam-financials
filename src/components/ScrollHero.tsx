@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import styles from "./ScrollHero.module.css";
+import { useAppModal } from "@/components/AppModalProvider";
 
 type Transform = { x: number; y: number; r: number; s: number };
 type CardState = { start: Transform; end: Transform };
@@ -45,6 +45,7 @@ const cards = [
 ];
 
 export default function ScrollHero() {
+  const { openModal } = useAppModal();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -134,12 +135,12 @@ export default function ScrollHero() {
               Scroll to see it come together.
             </p>
             <div className={styles.ctaRow}>
-              <Link href="/signup" className={styles.cta}>
+              <button type="button" onClick={openModal} className={styles.cta}>
                 Open an account
-              </Link>
-              <Link href="/download" className={styles.ctaSecondary}>
+              </button>
+              <button type="button" onClick={openModal} className={styles.ctaSecondary}>
                 Download the app
-              </Link>
+              </button>
             </div>
           </div>
 

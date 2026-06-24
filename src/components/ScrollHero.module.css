@@ -82,6 +82,9 @@
   background: #fff;
   color: #0f172a;
   font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
   border-radius: 9999px;
   padding: 14px 32px;
   text-decoration: none;
@@ -96,6 +99,8 @@
   background: transparent;
   color: #fff;
   font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 14px 32px;

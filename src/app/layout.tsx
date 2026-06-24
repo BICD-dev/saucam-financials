@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AppModalProvider from "@/components/AppModalProvider";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"], // It's better to specify weights
@@ -34,9 +35,11 @@ export default function RootLayout({
       className={`${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full w-full flex flex-col">
-        <Header />
-        {children}
-        <Footer />
+        <AppModalProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AppModalProvider>
       </body>
     </html>
   );

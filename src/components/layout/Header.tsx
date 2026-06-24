@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useAppModal } from "@/components/AppModalProvider";
 type DropdownItem = {
   label: string;
   description: string;
@@ -130,6 +131,7 @@ const ChevronIcon = () => (
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { openModal } = useAppModal();
   const pathname = usePathname();
   const isBusiness = pathname.startsWith("/business");
   const isPersonal = pathname === "/";
@@ -279,17 +281,18 @@ export default function Header() {
           >
             Sign in
           </Link>
-          <Link
-            href="/signup"
+          <button
+            type="button"
+            onClick={openModal}
             className={cn(
-              "px-6 py-2.5 rounded-full text-base font-semibold no-underline transition-colors",
+              "px-6 py-2.5 rounded-full text-base font-semibold transition-colors",
               isAbout
                 ? "bg-slate-900 text-white hover:bg-slate-700"
                 : "bg-white text-slate-900 hover:bg-slate-100"
             )}
           >
             Get started
-          </Link>
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -359,15 +362,19 @@ export default function Header() {
             >
               Sign in
             </Link>
-            <Link
-              href="/signup"
+            <button
+              type="button"
+              onClick={() => {
+                setMobileOpen(false);
+                openModal();
+              }}
               className={cn(
-                "block text-center py-2.75 rounded-full text-base font-medium no-underline",
+                "block text-center py-2.75 rounded-full text-base font-medium",
                 isAbout ? "bg-slate-900 text-white" : "bg-white text-slate-900"
               )}
             >
               Get started
-            </Link>
+            </button>
           </div>
         </div>
       )}
