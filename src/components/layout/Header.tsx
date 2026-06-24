@@ -60,9 +60,9 @@ const navItems: NavItem[] = [
     label: "Products",
     dropdown: [
       {
-        label: "Corporate Remittance",
-        description: "High-volume cross-border transfers",
-        href: "/business#corporate",
+        label: "Cross-border Transfers",
+        description: "Send and receive money across borders",
+        href: "/#transfers",
         icon: (
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <rect x="2" y="4" width="12" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
@@ -71,9 +71,9 @@ const navItems: NavItem[] = [
         ),
       },
       {
-        label: "Foreign Exchange",
-        description: "Competitive rates and currency tools",
-        href: "/business#foreign-exchange",
+        label: "Crypto",
+        description: "Buy, sell, and spend crypto",
+        href: "/#crypto",
         icon: (
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M3 5h10M3 8h7M3 11h5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
@@ -102,41 +102,14 @@ const navItems: NavItem[] = [
           </svg>
         ),
       },
-    ],
-  },
-  {
-    label: "Company",
-    dropdown: [
       {
-        label: "Careers",
-        description: "Join our team",
-        href: "/company/careers",
+        label: "Loan Services",
+        description: "Working capital & SME financing",
+        href: "/business#loan-services",
         icon: (
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M2 13V6l6-4 6 4v7" stroke="currentColor" strokeWidth="1.3" />
-            <rect x="5.5" y="8" width="5" height="5" rx=".5" stroke="currentColor" strokeWidth="1.3" />
-          </svg>
-        ),
-      },
-      {
-        label: "Press & Media",
-        description: "News & resources",
-        href: "/company/press",
-        icon: (
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <rect x="2" y="4" width="12" height="9" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
-            <path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1" stroke="currentColor" strokeWidth="1.3" />
-          </svg>
-        ),
-      },
-      {
-        label: "Investors",
-        description: "Investor relations",
-        href: "/company/investors",
-        icon: (
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <circle cx="8" cy="8" r="5.5" stroke="currentColor" strokeWidth="1.3" />
-            <path d="M5 9l2-2 2 2 2-4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+            <rect x="2" y="6" width="12" height="7" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
+            <path d="M2 6l6-3.5L14 6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         ),
       },
@@ -158,21 +131,20 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const isBusiness = pathname.startsWith("/business");
+  const isPersonal = pathname === "/";
   const isAbout = pathname.startsWith("/about");
-
-  const isBusiness = pathname === "/" || pathname.startsWith("/business");
-  const isPersonal = pathname.startsWith("/personal");
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-[100] border-b",
-        isAbout ? "bg-white border-slate-200" : "bg-slate-950 border-white/10"
+        "top-0 inset-x-0 z-[100]",
+        isAbout ? "sticky bg-white border-b border-slate-200" : "fixed bg-transparent"
       )}
     >
-      <div className="max-w-295  px-4 flex items-center h-[82px] gap-8 justify-between">
+      <div className="max-w-295 mx-auto px-4 flex items-center h-[82px] gap-8 justify-between">
         {/* Logo */}
-        <Link href="/business" className="flex items-center gap-3 no-underline shrink-0">
+        <Link href="/" className="flex items-center gap-3 no-underline shrink-0">
           <Image src="/assets/logo/saucam_logoMark-WhiteBg-transparent.png" alt="Saucam Logo" width={50} height={60} />
               {/* <LogoMark /> */}
           <span className={cn("font-['Syne'] text-2xl font-bold -tracking-[0.3px] lg:block", isAbout ? "text-slate-900" : "text-white")}>
@@ -180,28 +152,32 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Personal / Business tabs */}
-        <div className={cn("flex items-center gap-2 rounded-full px-4 p-1 shrink-0", isAbout ? "bg-slate-100" : "bg-white/5")}>
+        {/* Personal / Business links */}
+        <div className="flex items-center gap-5 shrink-0">
           <Link
-            href="/personal"
-            className={`rounded-full py-2 text-sm font-semibold transition-colors ${
-              isPersonal
-                ? "bg-blue-600 text-white"
-                : isAbout
-                  ? "text-slate-600 hover:bg-slate-200 hover:text-slate-900"
-                  : "text-white/70 hover:bg-white/10 hover:text-white"
+            href="/"
+            className={`text-sm font-semibold transition-colors no-underline ${
+              isAbout
+                ? isPersonal
+                  ? "text-slate-900"
+                  : "text-slate-600 hover:text-slate-900"
+                : isPersonal
+                  ? "text-white"
+                  : "text-white/70 hover:text-white"
             }`}
           >
             Personal
           </Link>
           <Link
             href="/business"
-            className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-              isBusiness
-                ? "bg-blue-600 text-white"
-                : isAbout
-                  ? "text-slate-600 hover:bg-slate-200 hover:text-slate-900"
-                  : "text-white/70 hover:bg-white/10 hover:text-white"
+            className={`text-sm font-semibold transition-colors no-underline ${
+              isAbout
+                ? isBusiness
+                  ? "text-slate-900"
+                  : "text-slate-600 hover:text-slate-900"
+                : isBusiness
+                  ? "text-white"
+                  : "text-white/70 hover:text-white"
             }`}
           >
             Business
@@ -305,7 +281,12 @@ export default function Header() {
           </Link>
           <Link
             href="/signup"
-            className="px-6 py-2.5 rounded-lg text-base font-semibold bg-blue-600 text-white no-underline transition-colors hover:bg-blue-500"
+            className={cn(
+              "px-6 py-2.5 rounded-full text-base font-semibold no-underline transition-colors",
+              isAbout
+                ? "bg-slate-900 text-white hover:bg-slate-700"
+                : "bg-white text-slate-900 hover:bg-slate-100"
+            )}
           >
             Get started
           </Link>
@@ -378,7 +359,13 @@ export default function Header() {
             >
               Sign in
             </Link>
-            <Link href="/signup" className="block text-center py-2.75 rounded-lg text-base font-medium bg-blue-600 text-white no-underline">
+            <Link
+              href="/signup"
+              className={cn(
+                "block text-center py-2.75 rounded-full text-base font-medium no-underline",
+                isAbout ? "bg-slate-900 text-white" : "bg-white text-slate-900"
+              )}
+            >
               Get started
             </Link>
           </div>

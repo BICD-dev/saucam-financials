@@ -195,31 +195,37 @@ export default function OurStoryPage() {
             </h2>
           </div>
 
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-            gap: 20,
-          }}>
-            {ourStoryTeam.map((p) => (
-              <div key={p.name} style={{
-                border: "1.5px solid #E2E8F0", borderRadius: 16,
-                padding: "28px 22px", background: "#fff",
-                boxShadow: "0 2px 16px rgba(10,45,110,0.05)",
-              }}>
-                <div style={{
-                  width: 56, height: 56, borderRadius: "50%",
-                  background: p.color, display: "flex", alignItems: "center",
-                  justifyContent: "center", fontWeight: 800, fontSize: 17,
-                  color: p.textColor, marginBottom: 16,
+          {ourStoryTeam.length > 0 ? (
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+              gap: 20,
+            }}>
+              {ourStoryTeam.map((p) => (
+                <div key={p.name} style={{
+                  border: "1.5px solid #E2E8F0", borderRadius: 16,
+                  padding: "28px 22px", background: "#fff",
+                  boxShadow: "0 2px 16px rgba(10,45,110,0.05)",
                 }}>
-                  {p.initials}
+                  <div style={{
+                    width: 56, height: 56, borderRadius: "50%",
+                    background: p.color, display: "flex", alignItems: "center",
+                    justifyContent: "center", fontWeight: 800, fontSize: 17,
+                    color: p.textColor, marginBottom: 16,
+                  }}>
+                    {p.initials}
+                  </div>
+                  <div style={{ fontWeight: 800, fontSize: 16, color: "#0A2D6E" }}>{p.name}</div>
+                  <div style={{ fontSize: 13, color: "#2563EB", fontWeight: 600, marginBottom: 12 }}>{p.role}</div>
+                  <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7 }}>{p.bio}</p>
                 </div>
-                <div style={{ fontWeight: 800, fontSize: 16, color: "#0A2D6E" }}>{p.name}</div>
-                <div style={{ fontSize: 13, color: "#2563EB", fontWeight: 600, marginBottom: 12 }}>{p.role}</div>
-                <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.7 }}>{p.bio}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p style={{ textAlign: "center", color: "#94A3B8", fontSize: 15 }}>
+              Coming soon.
+            </p>
+          )}
         </div>
       </section>
 

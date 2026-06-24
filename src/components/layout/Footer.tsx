@@ -21,12 +21,12 @@ const columns: FooterColumn[] = [
   {
     heading: "Products",
     links: [
-      { label: "Corporate Remittance", href: "/business#corporate" },
-      { label: "Asset Backed Microfinance", href: "/business#asset-backed" },
-      { label: "Foreign Exchange", href: "/business#foreign-exchange" },
+      { label: "Multi-currency Wallet", href: "/#wallet" },
+      { label: "Cross-border Transfers", href: "/#transfers" },
+      { label: "Crypto", href: "/#crypto" },
       { label: "Credit Card Payments", href: "/personal" },
-      { label: "TravelCard", href: "/personal" },
       { label: "Investment & Savings", href: "/personal" },
+      { label: "Loan Services", href: "/business#loan-services" },
     ],
   },
   {
@@ -86,7 +86,8 @@ const LogoMark = () => (
 
 export default function Footer() {
   const pathname = usePathname();
-  const isAbout = pathname.startsWith("/about");
+  const isHome = pathname === "/";
+  const isAbout = pathname.startsWith("/about") || isHome;
 
   return (
     <footer

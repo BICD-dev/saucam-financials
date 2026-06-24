@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import { ArrowLeftRight, PiggyBank, CreditCard } from "lucide-react";
+import { ArrowLeftRight, PiggyBank, CreditCard, Banknote } from "lucide-react";
+import BusinessHero from "@/components/BusinessHero";
 
 const sections = [
   {
@@ -42,6 +43,14 @@ const sections = [
 
     content:
       "Personalized brokerage services for high-net-worth transactions. Our expert brokers provide market insights and execution strategies to ensure you get the best possible value on large-scale currency acquisitions.",
+  },
+  {
+    id: "loan-services",
+    title: "Loan Services",
+    image: "/assets/scan2.jpg",
+
+    content:
+      "Fuel your growth with working capital, SME, and invoice financing loans tailored to your business cycle. Our streamlined approval process and competitive rates mean you get funded fast, with repayment terms built around your real cash flow.",
   },
 ];
 const steps = [
@@ -264,61 +273,7 @@ const Business = () => {
   return (
     <main className="bg-slate-950 text-white">
       {/* Section 1: Hero */}
-      <div className="min-h-screen px-3 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <section className="flex flex-col gap-6 items-left justify-center mt-4 md:mt-0">
-          <p className="text-sm font-semibold text-white bg-slate-800 border border-slate-700 rounded-full w-fit px-4 py-1">
-            Africa&apos;s fastest growing financial Institution 2021-2025
-          </p>
-          <h1 className="font-bold text-5xl md:text-7xl leading-tight">
-            International Payment Solutions
-          </h1>
-          <h2 className="font-medium text-xl md:text-2xl text-slate-400">
-            Collect payments, access loans and manage operations with a business
-            banking solution that meets all your needs.
-          </h2>
-          <button className="cursor-pointer text-white bg-blue-600 hover:bg-blue-700 transition-all rounded-md py-3 px-8 w-fit font-semibold">
-            Open an account &rarr;
-          </button>
-        </section>
-        <section className="relative h-[400px] md:h-[500px] w-full mb-6">
-          <div className="absolute top-6 left-2 md:left-8 w-[45%] h-[45%] rounded-2xl overflow-hidden border border-slate-700/70 shadow-2xl rotate-[-6deg] z-30">
-            <Image
-              src="/assets/moneyCount.jpg"
-              alt="Money counting"
-              className="w-full h-full object-cover"
-              width={420}
-              height={420}
-            />
-          </div>
-          <div className="absolute top-2 right-2 md:right-10 w-[44%] h-[42%] rounded-2xl overflow-hidden border border-blue-400/40 shadow-2xl rotate-[5deg] z-20">
-            <Image
-              src="/assets/cards.jpg"
-              alt="Business cards"
-              className="w-full h-full object-cover"
-              width={420}
-              height={400}
-            />
-          </div>
-          <div className="absolute bottom-6 left-4 md:left-14 w-[52%] h-[42%] rounded-2xl overflow-hidden border border-slate-700/70 shadow-2xl rotate-[3deg] z-10">
-            <Image
-              src="/assets/atm.jpg"
-              alt="ATM machine"
-              className="w-full h-full object-cover"
-              width={480}
-              height={360}
-            />
-          </div>
-          <div className="absolute bottom-10 right-0 md:right-8 w-[43%] h-[38%] rounded-2xl overflow-hidden border border-slate-700/70 shadow-2xl rotate-[-8deg] z-40">
-            <Image
-              src="/assets/posNcard.jpg"
-              alt="Business owner with card"
-              className="w-full h-full object-cover"
-              width={420}
-              height={340}
-            />
-          </div>
-        </section>
-      </div>
+      <BusinessHero />
 
       {/* Section 2: Features with Sticky Nav */}
       <div className="relative h-fit bg-blue-100 pb-20 px-2 sm:px-4 md:px-6">
@@ -693,7 +648,7 @@ const Business = () => {
           </h1>
           <span />
         </section>
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <section className="grid grid-cols-1 lg:grid-cols-4 gap-4">
           <div className="rounded-md border border-blue-200 bg-white text-black flex flex-col gap-4 p-5 md:p-6">
             <div className="w-11 h-11 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
               <ArrowLeftRight size={22} />
@@ -731,6 +686,17 @@ const Business = () => {
               network, customers can instantiate transfers, track transactions
               in real-time and access support where needed, bringing the gap
               between digital convenience and human assistance.
+            </p>
+          </div>
+          <div className="rounded-md border border-blue-200 bg-white text-black flex flex-col gap-4 p-5 md:p-6">
+            <div className="w-11 h-11 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+              <Banknote size={22} />
+            </div>
+            <h1 className="text-lg md:text-xl font-bold">Loan Services</h1>
+            <p className="text-sm md:text-base text-slate-600">
+              Working capital, SME, and invoice financing loans built around
+              your cash flow, with fast approvals and competitive rates to
+              keep your business moving.
             </p>
           </div>
         </section>

@@ -32,40 +32,14 @@ export const ourStoryStats = [
   { value: "$1M+", label: "Total processed" },
 ];
 
-export const ourStoryTeam = [
-  {
-    initials: "SA",
-    name: "Samuel A.",
-    role: "Co-Founder & CEO",
-    bio: "Former investment banker with 15 years of experience across JPMorgan and Standard Chartered. Samuel's vision for accessible cross-border finance is the heartbeat of Saucam.",
-    color: "#DBEAFE",
-    textColor: "#1D4ED8",
-  },
-  {
-    initials: "DJ",
-    name: "Daniel Joseph",
-    role: "Co-Founder & CTO",
-    bio: "A fintech engineer who previously built payment infrastructure at Datafy Technologies and Strategic Outsourcing Limited. Daniel architected Saucam's core compliance and real-time settlement engine from the ground up.",
-    color: "#D1FAE5",
-    textColor: "#065F46",
-  },
-  {
-    initials: "BI",
-    name: "Bright Iheagwam",
-    role: "Chief Operating Officer",
-    bio: "A veteran of African financial markets, Bright led expansion operations at a pan-African bank for a decade before joining Saucam to build our corridor network.",
-    color: "#EDE9FE",
-    textColor: "#5B21B6",
-  },
-  {
-    initials: "FI",
-    name: "Folarin Ibrahim",
-    role: "Chief Compliance Officer",
-    bio: "With a background in regulatory affairs across the GCC and EU, Folarin ensures Saucam maintains the highest standards of AML, KYC and international compliance at scale.",
-    color: "#FEF9C3",
-    textColor: "#92400E",
-  },
-];
+export const ourStoryTeam: {
+  initials: string;
+  name: string;
+  role: string;
+  bio: string;
+  color: string;
+  textColor: string;
+}[] = [];
 
 export const ourStoryFeatureCards = [
   {
